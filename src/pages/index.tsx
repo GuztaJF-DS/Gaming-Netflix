@@ -4,16 +4,15 @@ import { NavBar } from '@/components/organisms/NavBar';
 import Styled from 'styled-components';
 
 export const Container = Styled.div`
-  padding: 15px;
+  background-color:white;
+  height:300vh;
 `;
 
 export default function Home() {
   return (
-    <main>
+    <Container>
       <NavBar />
-      <Container>
-        <DefaultButton name={'test'} />
-      </Container>
-    </main>
+      <DefaultButton name={'test'} />
+    </Container>
   );
 }
