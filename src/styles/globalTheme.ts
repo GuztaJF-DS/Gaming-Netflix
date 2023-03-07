@@ -1,12 +1,20 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const Global = createGlobalStyle`
+  @font-face {
+    font-family: 'NetflixSans-Regular';
+    src: url('/fonts/NetflixSans-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
   * {
     margin: 0;
-    padding: 5px;
+    background-color: black;
     color: white;
     outline: 0;
     box-sizing: border-box;
+    font-family: 'NetflixSans-Regular';
   }
   html{
     scroll-behavior:smooth;
@@ -16,6 +24,9 @@ export const Global = createGlobalStyle`
     cursor: default;
     z-index: 0;
     min-height: 100vh;
+  }
+  body {
+    padding: 15px;
   }
   main {
     padding: 0%;
