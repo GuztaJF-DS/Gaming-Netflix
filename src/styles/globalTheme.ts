@@ -25,9 +25,6 @@ export const Global = createGlobalStyle`
     z-index: 0;
     min-height: 100vh;
   }
-  body {
-    padding: 15px;
-  }
   main {
     padding: 0%;
     display: flex;

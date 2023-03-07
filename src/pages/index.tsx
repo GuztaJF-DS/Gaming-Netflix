@@ -1,13 +1,19 @@
 import React from 'react';
-import { DefaultButton } from '@/atoms/DefaultButtons';
+import { DefaultButton } from '@/components/atoms/DefaultButtons';
+import { NavBar } from '@/components/organisms/NavBar';
+import Styled from 'styled-components';
+
+export const Container = Styled.div`
+  padding: 15px;
+`;
 
 export default function Home() {
   return (
-    <>
-      <main>
-        love
+    <main>
+      <NavBar />
+      <Container>
         <DefaultButton name={'test'} />
-      </main>
-    </>
+      </Container>
+    </main>
   );
 }

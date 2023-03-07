@@ -8,7 +8,7 @@ export const CustomButton = Styled.button`
     justify-content: space-between;
     align-items: center;
     color: ${fontColor || '#ffffff'};
-    border-radius: 3px;
+    border-radius: 5px;
     font-size: ${fontSize || '1.2'}rem;
     font-weight: 500;
     width: fit-content;
