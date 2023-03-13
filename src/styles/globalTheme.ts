@@ -10,7 +10,6 @@ export const Global = createGlobalStyle`
   }
   * {
     margin: 0;
-    background-color: black;
     color: white;
     outline: 0;
     box-sizing: border-box;

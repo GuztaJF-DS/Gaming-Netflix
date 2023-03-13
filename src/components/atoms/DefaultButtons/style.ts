@@ -12,15 +12,15 @@ export const CustomButton = Styled.button`
     font-size: ${fontSize || '1.2'}rem;
     font-weight: 500;
     width: fit-content;
-    padding: 0.3rem 1.3rem;
+    padding: 0.4rem 1.3rem;
     background-clip: padding-box;
-    border: 2.5px solid rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0);
     :hover {
       background-image: linear-gradient(rgb(0 0 0/15%) 0 0);
     }
     :active {
       background-image: linear-gradient(rgb(0 0 0/15%) 0 0);
-      outline: 1.5px solid #ffffff;
+      outline: 2px solid #ffffff;
     }
   `}
 `;
