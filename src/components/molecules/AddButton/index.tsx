@@ -1,12 +1,15 @@
+/* ----------------- External ----------------- */
 import React, { useState } from 'react';
+
+/* ----------------- Atom ----------------- */
 import { RoundButton } from '@/components/atoms/RoundButton';
+
+/* ----------------- SVGs ----------------- */
 import Add from '../../../../public/svg/add.svg';
 import Checked from '../../../../public/svg/checked.svg';
 
-export interface IDefaultButton {
-  name?: string;
-  onClick: () => void;
-}
+/* ----------------- Interface ----------------- */
+import { IDefaultButton } from '@/interfaces/IDefaultButton';
 
 export function AddButton({ onClick }: IDefaultButton) {
   const [added, setAdded] = useState(false);

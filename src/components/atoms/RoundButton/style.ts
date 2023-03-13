@@ -1,5 +1,8 @@
+/* ----------------- External ----------------- */
 import Styled, { css } from 'styled-components';
-import { IDefaultButton } from './index';
+
+/* ----------------- Interface ----------------- */
+import { IDefaultButton } from '@/interfaces/IDefaultButton';
 
 export const CustomButton = Styled.button`
   ${({ backgroundColor }: IDefaultButton) => css`

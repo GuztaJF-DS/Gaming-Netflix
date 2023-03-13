@@ -1,11 +1,14 @@
+/* ----------------- External ----------------- */
 import React from 'react';
+
+/* ----------------- Atom ----------------- */
 import { DefaultButton } from '@/components/atoms/DefaultButton';
+
+/* ----------------- SVGs ----------------- */
 import Info from '../../../../public/svg/info.svg';
 
-export interface IDefaultButton {
-  name?: string;
-  onClick: () => void;
-}
+/* ----------------- Interface ----------------- */
+import { IDefaultButton } from '@/interfaces/IDefaultButton';
 
 export function InfoButton({
   name = 'Mais informações',

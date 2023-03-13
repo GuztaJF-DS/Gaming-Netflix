@@ -1,14 +1,11 @@
+/* ----------------- External ----------------- */
 import React from 'react';
-import { CustomButton, ImageContainer } from './style';
 
-export interface IDefaultButton {
-  name?: string;
-  backgroundColor?: string;
-  fontSize?: number;
-  fontColor?: string;
-  children: React.ReactElement;
-  onClick: () => void;
-}
+/* ----------------- Interface ----------------- */
+import { IDefaultButton } from '@/interfaces/IDefaultButton';
+
+/* ----------------- Style ----------------- */
+import { CustomButton, ImageContainer } from './style';
 
 export function RoundButton({
   name,

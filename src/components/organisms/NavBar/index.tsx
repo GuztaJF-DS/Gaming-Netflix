@@ -1,5 +1,8 @@
+/* ----------------- External ----------------- */
 import React from 'react';
 import Image from 'next/image';
+
+/* ----------------- Style ----------------- */
 import { MainContainer, Mask } from './style';
 
 export function NavBar() {

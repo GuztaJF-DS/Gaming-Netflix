@@ -1,11 +1,14 @@
+/* ----------------- External ----------------- */
 import React from 'react';
+
+/* ----------------- Atoms ----------------- */
 import { DefaultButton } from '@/components/atoms/DefaultButton';
+
+/* ----------------- SVG ----------------- */
 import Play from '../../../../public/svg/play.svg';
 
-export interface IDefaultButton {
-  name?: string;
-  onClick: () => void;
-}
+/* ----------------- Interface ----------------- */
+import { IDefaultButton } from '@/interfaces/IDefaultButton';
 
 export function LargePlayButton({
   name = 'Assistir',
