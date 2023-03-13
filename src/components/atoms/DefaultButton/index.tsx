@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { CustomButton, ImageContainer } from './style';
 
 export interface IDefaultButton {
@@ -7,19 +6,29 @@ export interface IDefaultButton {
   backgroundColor?: string;
   fontSize?: number;
   fontColor?: string;
+  children: React.ReactElement;
+  onClick: () => void;
 }
 
 export function DefaultButton({
   name,
   backgroundColor,
   fontSize,
+  fontColor,
+  children,
+  onClick,
 }: IDefaultButton) {
   return (
-    <CustomButton backgroundColor={backgroundColor} fontSize={fontSize}>
-      <ImageContainer>
-        <Image src="svg/info.svg" height={20} width={20} alt="svg" />
-      </ImageContainer>
-      {name}
+    <CustomButton
+      backgroundColor={backgroundColor}
+      fontSize={fontSize}
+      fontColor={fontColor}
+      onClick={onClick}
+    >
+      <>
+        <ImageContainer>{children}</ImageContainer>
+        {name}
+      </>
     </CustomButton>
   );
 }

@@ -1,7 +1,8 @@
 import React from 'react';
-import { DefaultButton } from '@/components/atoms/DefaultButtons';
 import { NavBar } from '@/components/organisms/NavBar';
 import Styled from 'styled-components';
+import { LargePlayButton } from '@/components/molecules/LargePlayButton';
+import { InfoButton } from '@/components/molecules/InfoButton';
 
 export const Container = Styled.div`
   height:100vh;
@@ -19,6 +20,8 @@ export const MainCardImage = Styled.div`
 
 export const Content = Styled.div`
   position:absolute;
+  width:100%;
+  height:100%;
   z-index:98;
 `;
 
@@ -28,7 +31,16 @@ export function MainMenu() {
       <MainCardImage />
       <NavBar />
       <Content>
-        <DefaultButton name={'test'} />
+        <LargePlayButton
+          onClick={() => {
+            console.log('play');
+          }}
+        />
+        <InfoButton
+          onClick={() => {
+            console.log('info');
+          }}
+        />
       </Content>
     </Container>
   );

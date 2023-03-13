@@ -8,18 +8,18 @@ export const CustomButton = Styled.button`
     justify-content: space-between;
     align-items: center;
     color: ${fontColor || '#ffffff'};
-    border-radius: 5px;
+    border-radius: 7px;
     font-size: ${fontSize || '1.2'}rem;
     font-weight: 500;
     width: fit-content;
-    padding: 0.4rem 1.3rem;
+    padding: 0.6rem 1.3rem;
     background-clip: padding-box;
     border: 2px solid rgba(255, 255, 255, 0);
     :hover {
-      background-image: linear-gradient(rgb(0 0 0/15%) 0 0);
+      filter: opacity(85%);
     }
     :active {
-      background-image: linear-gradient(rgb(0 0 0/15%) 0 0);
+      filter: opacity(65%);
       outline: 2px solid #ffffff;
     }
   `}
@@ -29,8 +29,4 @@ export const ImageContainer = Styled.div`
   display: flex;
   background-color: transparent;
   padding-right: 9px;
-  img {
-    color:white;
-    background-color: transparent;
-  }
 `;
