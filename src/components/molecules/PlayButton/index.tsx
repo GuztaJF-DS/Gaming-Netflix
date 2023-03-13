@@ -10,7 +10,7 @@ export interface IDefaultButton {
 export function PlayButton({ onClick }: IDefaultButton) {
   return (
     <RoundButton onClick={onClick}>
-      <Play width={20} height={20} fill={'rgba(255, 255, 255, 0.7)'} />
+      <Play width={15} height={15} fill={'rgba(255, 255, 255, 0.7)'} />
     </RoundButton>
   );
 }

@@ -4,6 +4,7 @@ import Styled from 'styled-components';
 import { LargePlayButton } from '@/components/molecules/LargePlayButton';
 import { InfoButton } from '@/components/molecules/InfoButton';
 import { PlayButton } from '@/components/molecules/PlayButton';
+import { AddButton } from '@/components/molecules/AddButton';
 
 export const Container = Styled.div`
   height:100vh;
@@ -43,6 +44,11 @@ export function MainMenu() {
           }}
         />
         <PlayButton
+          onClick={() => {
+            console.log('Round');
+          }}
+        />
+        <AddButton
           onClick={() => {
             console.log('Round');
           }}
