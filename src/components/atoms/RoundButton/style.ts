@@ -2,21 +2,18 @@ import Styled, { css } from 'styled-components';
 import { IDefaultButton } from './index';
 
 export const CustomButton = Styled.button`
-  ${({ backgroundColor, fontSize, fontColor }: IDefaultButton) => css`
-    background-color: ${backgroundColor || '#e50914'};
+  ${({ backgroundColor }: IDefaultButton) => css`
+    background-color: ${backgroundColor || 'rgba(42,42,42,0.5)'};
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    color: ${fontColor || '#ffffff'};
-    border-radius: 7px;
-    font-size: ${fontSize || '1.2'}rem;
-    font-weight: 500;
-    width: fit-content;
-    padding: 0.6rem 1.3rem;
+    border-radius: 100%;
+    height: 42px;
+    width: 42px;
     background-clip: padding-box;
-    border: 2px solid rgba(255, 255, 255, 0);
+    border: 3px solid rgba(255, 255, 255, 0.5);
     :hover {
-      filter: opacity(85%);
+      border: 3px solid hsla(0, 0%, 100%, 1);
     }
     :active {
       filter: opacity(65%);
@@ -30,5 +27,4 @@ export const CustomButton = Styled.button`
 export const ImageContainer = Styled.div`
   display: flex;
   background-color: transparent;
-  padding-right: 9px;
 `;

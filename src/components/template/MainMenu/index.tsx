@@ -3,6 +3,7 @@ import { NavBar } from '@/components/organisms/NavBar';
 import Styled from 'styled-components';
 import { LargePlayButton } from '@/components/molecules/LargePlayButton';
 import { InfoButton } from '@/components/molecules/InfoButton';
+import { PlayButton } from '@/components/molecules/PlayButton';
 
 export const Container = Styled.div`
   height:100vh;
@@ -39,6 +40,11 @@ export function MainMenu() {
         <InfoButton
           onClick={() => {
             console.log('info');
+          }}
+        />
+        <PlayButton
+          onClick={() => {
+            console.log('Round');
           }}
         />
       </Content>
