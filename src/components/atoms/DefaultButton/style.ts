@@ -14,6 +14,7 @@ export const CustomButton = Styled.button`
     border-radius: 7px;
     font-size: ${fontSize || '1.2'}rem;
     font-weight: 500;
+    margin-right: 10px;
     width: fit-content;
     padding: 0.6rem 1.3rem;
     background-clip: padding-box;
