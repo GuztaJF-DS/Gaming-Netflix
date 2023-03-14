@@ -10,7 +10,6 @@ import { CustomButton, ImageContainer } from './style';
 export function DefaultButton({
   name,
   backgroundColor,
-  fontSize,
   fontColor,
   children,
   onClick,
@@ -18,7 +17,6 @@ export function DefaultButton({
   return (
     <CustomButton
       backgroundColor={backgroundColor}
-      fontSize={fontSize}
       fontColor={fontColor}
       onClick={onClick}
     >

@@ -10,10 +10,7 @@ import Info from '../../../../public/svg/info.svg';
 /* ----------------- Interface ----------------- */
 import { IDefaultButton } from '@/interfaces/IDefaultButton';
 
-export function InfoButton({
-  name = 'Mais informações',
-  onClick,
-}: IDefaultButton) {
+export function InfoButton({ name = 'More Info', onClick }: IDefaultButton) {
   return (
     <DefaultButton
       name={name}

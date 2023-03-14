@@ -3,15 +3,12 @@ import React from 'react';
 import Image from 'next/image';
 
 /* ----------------- Style ----------------- */
-import { MainContainer, Mask } from './style';
+import { MainContainer } from './style';
 
 export function NavBar() {
   return (
-    <>
-      <MainContainer>
-        <Image src={'/svg/logo.svg'} width={120} height={50} alt={'gameflix'} />
-      </MainContainer>
-      <Mask />
-    </>
+    <MainContainer>
+      <Image src={'/svg/logo.svg'} fill alt={'gameflix'} />
+    </MainContainer>
   );
 }

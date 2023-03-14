@@ -10,10 +10,7 @@ import Play from '../../../../public/svg/play.svg';
 /* ----------------- Interface ----------------- */
 import { IDefaultButton } from '@/interfaces/IDefaultButton';
 
-export function LargePlayButton({
-  name = 'Assistir',
-  onClick,
-}: IDefaultButton) {
+export function LargePlayButton({ name = 'Play', onClick }: IDefaultButton) {
   return (
     <DefaultButton
       name={name}

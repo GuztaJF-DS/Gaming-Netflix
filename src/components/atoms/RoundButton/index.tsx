@@ -10,7 +10,6 @@ import { CustomButton, ImageContainer } from './style';
 export function RoundButton({
   name,
   backgroundColor,
-  fontSize,
   fontColor,
   children,
   onClick,
@@ -18,7 +17,6 @@ export function RoundButton({
   return (
     <CustomButton
       backgroundColor={backgroundColor}
-      fontSize={fontSize}
       fontColor={fontColor}
       onClick={onClick}
     >
