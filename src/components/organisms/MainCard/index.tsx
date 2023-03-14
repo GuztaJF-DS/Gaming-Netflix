@@ -36,11 +36,11 @@ export function MainCard() {
             alt="Game"
           />
         </LogoContainer>
-        {/* <h4>
-          Super Mario 64 is the first 3D Super Mario game, released for the
-          Nintendo 64 is one of the greatest games of all time
+        <h4>
+          the first 3D Super Mario game, released for the Nintendo 64 is one of
+          the greatest games of all time
         </h4>
-        <ButtonContainer>
+        {/* <ButtonContainer>
           <LargePlayButton
             onClick={() => {
               console.log('play');

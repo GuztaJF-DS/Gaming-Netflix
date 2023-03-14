@@ -8,16 +8,17 @@ export const CustomButton = Styled.button`
   ${({ backgroundColor, fontColor }: IDefaultButton) => css`
     background-color: ${backgroundColor || '#e50914'};
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     color: ${fontColor || '#ffffff'};
     border-radius: 7px;
-    font-size: 2vw;
     font-weight: 500;
     margin-right: 10px;
-    max-width: 25vw;
     width: fit-content;
-    padding: 1.7vh 2vw;
+    font-size: 1.7vw;
+    padding: 1vw 1.5vw;
+    white-space: nowrap;
     background-clip: padding-box;
     border: 2px solid rgba(255, 255, 255, 0);
     :hover {
@@ -36,4 +37,6 @@ export const ImageContainer = Styled.div`
   display: flex;
   max-width: 20vw;
   padding-right: 9px;
+  svg {
+  }
 `;
