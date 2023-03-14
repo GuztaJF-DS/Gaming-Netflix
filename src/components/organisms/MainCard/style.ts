@@ -31,8 +31,10 @@ export const ContentContainer = Styled.div`
   h4 {
     filter: invert(80%) ;
     font-size:1.2vw ;
+    margin-bottom: 13px;
     @media screen and (max-width:768px){
-        font-size:1.4vw;
+      margin-bottom: 4px;
+      font-size:1.4vw;
     }
   }
 `;
@@ -45,5 +47,6 @@ export const LogoContainer = Styled.div`
 
 export const ButtonContainer = Styled.div`
   display: flex;
+  width: 100%;
   flex-direction: row;
 `;

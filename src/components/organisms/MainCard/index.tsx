@@ -40,7 +40,7 @@ export function MainCard() {
           the first 3D Super Mario game, released for the Nintendo 64 is one of
           the greatest games of all time
         </h4>
-        {/* <ButtonContainer>
+        <ButtonContainer>
           <LargePlayButton
             onClick={() => {
               console.log('play');
@@ -51,7 +51,7 @@ export function MainCard() {
               console.log('mario');
             }}
           />
-        </ButtonContainer> */}
+        </ButtonContainer>
       </ContentContainer>
     </Container>
   );
