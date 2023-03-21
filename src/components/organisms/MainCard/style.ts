@@ -26,11 +26,12 @@ export const ContentContainer = Styled.div`
   position: absolute;
   width:30vw;
   height: auto;
-  top: 30%;
+  top: 35%;
   left: 4%;
   h4 {
-    filter: invert(80%) ;
     font-size:1.2vw ;
+    font-weight:400;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
     margin-bottom: 13px;
     @media screen and (max-width:768px){
       margin-bottom: 4px;
@@ -40,8 +41,9 @@ export const ContentContainer = Styled.div`
 `;
 
 export const LogoContainer = Styled.div`
-  height: 15vw;
-  width:25vw;
+  min-height: 10vw;
+  max-height: 15vw;
+  width:30vw;
   position: relative;
 `;
 

@@ -18,7 +18,7 @@ export function MainCard() {
   return (
     <Container>
       <Image
-        src={'/image/games/mario64.png'}
+        src={'/image/games/darksouls3.png'}
         fill
         style={{
           objectFit: 'cover',
@@ -29,7 +29,7 @@ export function MainCard() {
       <ContentContainer>
         <LogoContainer>
           <Image
-            src={'/image/games/mario64Logo.png'}
+            src={'/image/games/darksouls3Logo.png'}
             style={{ objectFit: 'contain' }}
             fill
             draggable={false}
@@ -37,8 +37,9 @@ export function MainCard() {
           />
         </LogoContainer>
         <h4>
-          the first 3D Super Mario game, released for the Nintendo 64 is one of
-          the greatest games of all time
+          The Lords of Cinder, long thought dead, have returned to their
+          thrones, but they are no longer the heroes they once were. You must
+          gather their ashes and kindle the fire anew, Ashen One.
         </h4>
         <ButtonContainer>
           <LargePlayButton

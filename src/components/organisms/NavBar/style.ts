@@ -6,7 +6,7 @@ export const MainContainer = Styled.div`
   z-index:99;
   position:fixed;
   justify-content:flex-start;
-  background: linear-gradient(0deg,transparent 0%, rgba(0, 0, 0, 0.74) 100%);
+  background:linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
   color: white;
   align-items:center;
   width: 100%;
