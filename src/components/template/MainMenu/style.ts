@@ -7,11 +7,3 @@ export const Container = Styled.div`
   flex-direction:column;
   height:fit-content;
 `;
-
-export const CardContainer = Styled.div`
-  height:200px;
-  position: relative;
-  top:-20px;
-  margin-bottom:20px;
-  width: 100%;
-`;

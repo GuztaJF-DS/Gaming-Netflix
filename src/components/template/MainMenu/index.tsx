@@ -2,18 +2,19 @@
 import React from 'react';
 
 /* ----------------- Style ----------------- */
-import { Container, CardContainer } from './style';
+import { Container } from './style';
 
 /* ----------------- Organisms ----------------- */
 import { NavBar } from '@/components/organisms/NavBar';
 import { MainCard } from '@/components/organisms/MainCard';
+import { CardRow } from '@/components/organisms/CardRow';
 
 export function MainMenu() {
   return (
     <Container>
       <NavBar />
       <MainCard />
-      <CardContainer>test</CardContainer>
+      <CardRow />
     </Container>
   );
 }
