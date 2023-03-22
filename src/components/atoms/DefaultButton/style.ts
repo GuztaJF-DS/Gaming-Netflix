@@ -30,9 +30,6 @@ export const CustomButton = Styled.button`
     :focus {
       outline: 2px solid #ffffff;
     }
-    @media screen and (max-width: 450px) {
-      padding: 0.8vw 1.2vw;
-    }
   `}
 `;
 
@@ -42,10 +39,6 @@ export const ImageContainer = Styled.div`
   padding-right: 2px;
   svg {
     width:3vw;
-    height:1.8vw;
-    @media screen and (max-width:768px){
-      max-width:2.5vw;
-      max-height:10px;
-    }
+    height:1.8vw; 
   }
 `;

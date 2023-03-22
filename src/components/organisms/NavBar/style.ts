@@ -21,5 +21,5 @@ export const MainContainer = Styled.div`
     img {
       max-width:14vw;
     }
-  } 
+  }
 `;

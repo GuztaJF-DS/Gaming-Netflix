@@ -8,15 +8,6 @@ export const Container = Styled.div`
   img {
     max-width:100vw;
   }
-  @media screen and (min-width:1440px){
-    height:700px;
-  } 
-  @media screen and (min-width:1770px){
-    height:950px;
-  } 
-  @media screen and (max-width:768px){
-    height:60vw;
-  } 
 `;
 
 export const ContentContainer = Styled.div`
@@ -26,7 +17,7 @@ export const ContentContainer = Styled.div`
   position: absolute;
   width:30vw;
   height: auto;
-  top: 35%;
+  top: 30%;
   left: 4%;
   h4 {
     font-size:1.2vw ;
