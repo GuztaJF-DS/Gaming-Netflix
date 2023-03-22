@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-key */
 /* ----------------- External ----------------- */
+import { FakeData } from '@/api/FakeGameData';
 import { Card } from '@/components/atoms/Card';
 import React from 'react';
 
@@ -8,15 +10,6 @@ import { Container, CardContainer, MoveButton } from './style';
 export function CardRow() {
   return (
     <Container>
-      <CardContainer>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </CardContainer>
       <MoveButton
         onClick={() => {
           console.log('return');
@@ -24,11 +17,15 @@ export function CardRow() {
       >
         {'<'}
       </MoveButton>
+      <CardContainer>
+        {FakeData.map(data => {
+          return <Card Name={data.name} />;
+        })}
+      </CardContainer>
       <MoveButton
         onClick={() => {
           console.log('return');
         }}
-        Right={true}
       >
         {'>'}
       </MoveButton>

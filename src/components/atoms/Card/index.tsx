@@ -1,11 +1,11 @@
 /* ----------------- External ----------------- */
 import React from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 /* ----------------- Style ----------------- */
 import { MainContainer } from './style';
 
-export function Card() {
+export function Card({ Name }: { Name: string }) {
   return (
     <MainContainer>
       {/* <Image
@@ -18,6 +18,7 @@ export function Card() {
         alt="Game"
         draggable={false}
       /> */}
+      {Name}
     </MainContainer>
   );
 }
