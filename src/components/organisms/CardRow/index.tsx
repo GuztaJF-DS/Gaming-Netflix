@@ -16,6 +16,8 @@ export function CardRow() {
     if (sum) {
       if (currentPage + 1 < Math.ceil(FakeData.length / 5)) {
         setCurrentPage(currentPage + 1);
+      } else {
+        setCurrentPage(0);
       }
     } else if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
@@ -40,17 +42,13 @@ export function CardRow() {
           return <Card Name={data.name} />;
         })}
       </CardContainer>
-      {currentPage + 1 !== Math.ceil(FakeData.length / 5) ? (
-        <MoveButton
-          onClick={() => {
-            UpdatePage(true);
-          }}
-        >
-          <Arrow />
-        </MoveButton>
-      ) : (
-        ''
-      )}
+      <MoveButton
+        onClick={() => {
+          UpdatePage(true);
+        }}
+      >
+        <Arrow />
+      </MoveButton>
     </Container>
   );
 }

@@ -35,7 +35,7 @@ export const MoveButton = Styled.button`
     }
   }
   svg {
-    width: 20px;
+    width: 1.2vw;
     fill:white;
   }
 `;
