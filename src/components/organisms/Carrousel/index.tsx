@@ -2,15 +2,19 @@
 /* ----------------- External ----------------- */
 import { FakeData } from '@/api/FakeGameData';
 import { Card } from '@/components/atoms/Card';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Arrow from '../../../../public/svg/arrow-icon.svg';
 
 /* ----------------- Style ----------------- */
 import { Container, CardContainer, MoveButton } from './style';
 
-export function CardRow() {
-  const [currentPage, setCurrentPage] = useState(1);
+export function Carrousel() {
+  const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    console.log(-93.6 * currentPage);
+  }, [currentPage]);
 
   function UpdatePage(sum: boolean) {
     if (sum) {

@@ -12,7 +12,7 @@ export const CardContainer = Styled.div`
 ${({ currentPage = 0 }: { currentPage?: number }) => css`
   display: flex;
   transition: transform 0.5s;
-  transform: translateX(calc(-93.6% * ${currentPage}));
+  transform: translateX(calc(-92.7vw * ${currentPage}));
 `}
 `;
 
@@ -26,7 +26,7 @@ export const MoveButton = Styled.button`
   justify-content: center;
   background: hsla(0, 0%, 0%, 0.5);
   border: none;
-  min-width: 3vw !important;
+  min-width: 2.8vw !important;
   height: 10.1vw;
   :last-child{
     right:0px;

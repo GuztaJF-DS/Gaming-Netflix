@@ -12,8 +12,8 @@ export const MainContainer = Styled.div`
   background: linear-gradient(180deg, rgba(70,70,70,1) 0%, rgba(0,0,0,1) 100%);
   object-fit: contain;
   border-radius: 3px;
-  max-width: 17.8vw;
-  height: 10vw;
+  max-width: 18vw;
+  height: 10.1vw;
   flex: 1 0 17.8vw;
   position: relative !important;
   :first-child {
