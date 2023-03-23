@@ -15,6 +15,7 @@ export const Global = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'NetflixSans-Regular';
     font-size:1.4vw;
+    z-index: 1;
   }
   html{
     scroll-behavior:smooth;

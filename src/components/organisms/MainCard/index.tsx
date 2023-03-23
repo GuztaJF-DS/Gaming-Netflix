@@ -9,6 +9,7 @@ import { InfoButton } from '@/components/molecules/InfoButton';
 /* ----------------- Style ----------------- */
 import {
   Container,
+  ImageWrapper,
   ContentContainer,
   LogoContainer,
   ButtonContainer,
@@ -17,11 +18,13 @@ import {
 export function MainCard() {
   return (
     <Container>
+      <ImageWrapper />
       <Image
         src={'/image/games/darksouls3.png'}
         fill
         style={{
           objectFit: 'cover',
+          zIndex: 0,
         }}
         draggable={false}
         alt="Game"

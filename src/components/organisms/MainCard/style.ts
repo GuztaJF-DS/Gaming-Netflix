@@ -10,6 +10,13 @@ export const Container = Styled.div`
   }
 `;
 
+export const ImageWrapper = Styled.div`
+  position: absolute;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, #141414 100%);
+  width: 100%;
+  height: 100%;
+`;
 export const ContentContainer = Styled.div`
   display: flex;
   justify-content: center;
