@@ -15,7 +15,6 @@ export const Global = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'NetflixSans-Regular';
     font-size:1.4vw;
-    z-index: 1;
   }
   html{
     scroll-behavior:smooth;
@@ -23,7 +22,7 @@ export const Global = createGlobalStyle`
   }
   html, body {
     cursor: default;
-    z-index: 0;
+    background: #141414;
     min-height: 100vh;
   }
   main {

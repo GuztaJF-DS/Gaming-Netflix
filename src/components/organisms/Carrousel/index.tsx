@@ -2,7 +2,7 @@
 /* ----------------- External ----------------- */
 import { FakeData } from '@/api/FakeGameData';
 import { Card } from '@/components/atoms/Card';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import Arrow from '../../../../public/svg/arrow-icon.svg';
 
@@ -11,10 +11,7 @@ import { Container, CardContainer, MoveButton } from './style';
 
 export function Carrousel() {
   const [currentPage, setCurrentPage] = useState(0);
-
-  useEffect(() => {
-    console.log(-93.6 * currentPage);
-  }, [currentPage]);
+  const [mouseLeave, setMouseLeave] = useState<number>();
 
   function UpdatePage(sum: boolean) {
     if (sum) {
@@ -42,8 +39,28 @@ export function Carrousel() {
         ''
       )}
       <CardContainer currentPage={currentPage}>
-        {FakeData.map(data => {
-          return <Card Name={data.name} />;
+        {FakeData.map((data, index) => {
+          if (index <= 5) {
+            return (
+              <Card
+                onMouseOver={() => {
+                  setMouseLeave(
+                    window.setTimeout(() => {
+                      data.biggerCard = true;
+                      setMouseLeave(0);
+                    }, 500),
+                  );
+                }}
+                onMouseOutCapture={() => {
+                  data.biggerCard = false;
+                  clearTimeout(mouseLeave);
+                  setMouseLeave(1);
+                }}
+                Name={data.name}
+                BiggerCard={data?.biggerCard}
+              />
+            );
+          }
         })}
       </CardContainer>
       <MoveButton

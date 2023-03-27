@@ -1,4 +1,16 @@
-export const FakeData = [
+interface IFakeData {
+  name: string;
+  description: string;
+  genres: string[];
+  releaseYear: number;
+  company: string[];
+  esrbRating: string;
+  averageTimeToBeat: number;
+  platform: string[];
+  biggerCard?: boolean;
+}
+
+export const FakeData: IFakeData[] = [
   {
     name: 'The Legend of Zelda: The Wind Waker',
     description:
