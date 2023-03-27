@@ -18,6 +18,7 @@ export const ImageWrapper = Styled.div`
   height: 100%;
 `;
 export const ContentContainer = Styled.div`
+  z-index: 1;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

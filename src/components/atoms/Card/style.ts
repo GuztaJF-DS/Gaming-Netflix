@@ -21,36 +21,58 @@ export const MainContainer = Styled.div`
   ${({
     BiggerCard,
     transitionCard,
+    index,
+    currentPage,
   }: {
     BiggerCard: boolean;
     transitionCard: boolean;
-  }) => css`
-    padding: 5px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: flex-end;
-    background: rgb(70, 70, 70);
-    background: linear-gradient(
-      180deg,
-      rgba(70, 70, 70, 1) 0%,
-      rgba(0, 0, 0, 1) 100%
-    );
-    border-radius: 3px;
-    height: 11vw;
-    width: 17.8vw;
-    position: absolute !important;
-    top: 0px;
-    transition: width 0.15s, height 0.15s, top 0.15s;
-    ${transitionCard &&
-    `
+    index: number;
+    currentPage: number;
+  }) => {
+    return css`
+      z-index: 0 !important;
+      padding: 5px;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: flex-end;
+      background: rgb(70, 70, 70);
+      background: linear-gradient(
+        180deg,
+        rgba(70, 70, 70, 1) 0%,
+        rgba(0, 0, 0, 1) 100%
+      );
+      border-radius: 3px;
+      height: 11vw;
+      width: 17.8vw;
+      position: absolute !important;
+      top: 0px;
+      left: 0px;
+      transition: width 0.15s, height 0.15s, top 0.15s, left 0.15s, right 0.15s;
+      ${transitionCard &&
+      `
       z-index: 3 !important;
     `}
-    ${BiggerCard &&
-    `
+      ${BiggerCard &&
+      `
       height: 21vw;
       width: 24vw;
       top: -6vw;
+      left: -3vw;
+      ${
+        index % 5 === 0
+          ? `
+            left: -6vw;
+          `
+          : ''
+      }
+      ${
+        (index === 1 || index === 6 * currentPage - (currentPage - 1)) &&
+        `
+        left: 0px;
+        `
+      }
     `}
-  `}
+    `;
+  }}
 `;

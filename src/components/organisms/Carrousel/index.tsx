@@ -40,27 +40,27 @@ export function Carrousel() {
       )}
       <CardContainer currentPage={currentPage}>
         {FakeData.map((data, index) => {
-          if (index <= 5) {
-            return (
-              <Card
-                onMouseOver={() => {
-                  setMouseLeave(
-                    window.setTimeout(() => {
-                      data.biggerCard = true;
-                      setMouseLeave(0);
-                    }, 500),
-                  );
-                }}
-                onMouseOutCapture={() => {
-                  data.biggerCard = false;
-                  clearTimeout(mouseLeave);
-                  setMouseLeave(1);
-                }}
-                Name={data.name}
-                BiggerCard={data?.biggerCard}
-              />
-            );
-          }
+          return (
+            <Card
+              onMouseOver={() => {
+                setMouseLeave(
+                  window.setTimeout(() => {
+                    data.biggerCard = true;
+                    setMouseLeave(0);
+                  }, 500),
+                );
+              }}
+              onMouseOutCapture={() => {
+                data.biggerCard = false;
+                clearTimeout(mouseLeave);
+                setMouseLeave(1);
+              }}
+              Name={data.name}
+              BiggerCard={data?.biggerCard}
+              index={index + 1}
+              currentPage={currentPage}
+            />
+          );
         })}
       </CardContainer>
       <MoveButton

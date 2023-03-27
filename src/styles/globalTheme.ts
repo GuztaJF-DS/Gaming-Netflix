@@ -22,6 +22,7 @@ export const Global = createGlobalStyle`
   }
   html, body {
     cursor: default;
+    z-index: 0;
     background: #141414;
     min-height: 100vh;
   }

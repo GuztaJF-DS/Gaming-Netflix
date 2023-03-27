@@ -10,11 +10,15 @@ export function Card({
   onMouseOutCapture,
   onMouseOver,
   BiggerCard = false,
+  index,
+  currentPage,
 }: {
   Name: string;
   onMouseOutCapture: () => void;
   onMouseOver: () => void;
   BiggerCard?: boolean;
+  index: number;
+  currentPage: number;
 }) {
   const [transitionCard, setTransitionCard] = useState(false);
 
@@ -31,12 +35,13 @@ export function Card({
   return (
     <>
       <HitboxContainer>
-        aaa
         <MainContainer
           onMouseOutCapture={onMouseOutCapture}
           onMouseOver={onMouseOver}
           BiggerCard={BiggerCard}
           transitionCard={transitionCard}
+          index={index}
+          currentPage={currentPage}
         >
           {/* 
           <Image

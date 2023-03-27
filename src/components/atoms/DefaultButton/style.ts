@@ -6,6 +6,7 @@ import { IDefaultButton } from '@/interfaces/IDefaultButton';
 
 export const CustomButton = Styled.button`
   ${({ backgroundColor, fontColor }: IDefaultButton) => css`
+    z-index: 1;
     background-color: ${backgroundColor || '#e50914'};
     display: flex;
     flex-wrap: nowrap;
