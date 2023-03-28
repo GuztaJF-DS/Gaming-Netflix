@@ -1,6 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
+  async headers() {
+    return [
+      {
+        source: '/fonts/NetflixSans-Regular.woff2',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
 };
-
-module.exports = nextConfig;
