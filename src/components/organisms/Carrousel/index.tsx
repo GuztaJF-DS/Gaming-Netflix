@@ -27,6 +27,7 @@ export function Carrousel() {
 
   return (
     <Container>
+      <p>GameCube/GBA Era</p>
       {currentPage !== 0 ? (
         <MoveButton
           onClick={() => {

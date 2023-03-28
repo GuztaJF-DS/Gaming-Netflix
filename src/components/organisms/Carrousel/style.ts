@@ -5,8 +5,21 @@ export const Container = Styled.div`
   position: relative;
   overflow-x: clip;
   overflow-y: visible;
-  top:-5vw;
+  top:-5.63vw;
   z-index: 10;
+  > p {
+    margin-left:4vw;
+    margin-bottom:10px;
+    font-size: 1.4vw;
+    line-height: 1.25vw;
+    font-weight: 500;
+    :hover{
+      ::after{
+        content: " >";
+      }
+      cursor: pointer;
+    }
+  }
 `;
 
 export const CardContainer = Styled.div`
@@ -22,7 +35,7 @@ export const CardContainer = Styled.div`
 
 export const MoveButton = Styled.button`
   position: absolute;
-  top: 44.5%;
+  top: 58%;
   transform: translateY(-50%);
   z-index: 1;
   display: flex;
@@ -31,7 +44,7 @@ export const MoveButton = Styled.button`
   background: hsla(0, 0%, 0%, 0.5);
   border: none;
   min-width: 2.8vw !important;
-  height: 10.1vw;
+  height: 11vw;
   :first-child{
     border-top-right-radius:4px;
     border-bottom-right-radius:4px;
