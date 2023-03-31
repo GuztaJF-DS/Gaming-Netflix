@@ -47,12 +47,14 @@ export function Carrousel() {
                 setMouseLeave(
                   window.setTimeout(() => {
                     data.biggerCard = true;
+                    console.log('enter');
                     setMouseLeave(0);
                   }, 500),
                 );
               }}
               onMouseOutCapture={() => {
                 data.biggerCard = false;
+                console.log('leave');
                 clearTimeout(mouseLeave);
                 setMouseLeave(1);
               }}

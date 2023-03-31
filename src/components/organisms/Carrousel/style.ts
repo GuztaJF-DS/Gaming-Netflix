@@ -7,7 +7,9 @@ export const Container = Styled.div`
   overflow-y: visible;
   top:-5.63vw;
   z-index: 10;
+  margin-bottom:4vw;
   > p {
+     z-index: -10 !important;
     margin-left:4vw;
     margin-bottom:10px;
     font-size: 1.4vw;
@@ -43,7 +45,7 @@ export const MoveButton = Styled.button`
   justify-content: center;
   background: hsla(0, 0%, 0%, 0.5);
   border: none;
-  min-width: 2.8vw !important;
+  width: 2.8vw !important;
   height: 11vw;
   :first-child{
     border-top-right-radius:4px;

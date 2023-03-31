@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 // import Image from 'next/image';
 
 /* ----------------- Style ----------------- */
-import { MainContainer, HitboxContainer } from './style';
+import { HitboxContainer, MainContainer, ImageContainer } from './style';
 
 export function Card({
   Name,
@@ -34,17 +34,18 @@ export function Card({
 
   return (
     <>
-      <HitboxContainer>
+      <HitboxContainer
+        onMouseLeave={onMouseOutCapture}
+        onMouseEnter={onMouseOver}
+      >
         <MainContainer
-          onMouseOutCapture={onMouseOutCapture}
-          onMouseOver={onMouseOver}
           BiggerCard={BiggerCard}
           transitionCard={transitionCard}
           index={index}
           currentPage={currentPage}
         >
-          {/* 
-          <Image
+          <ImageContainer> {Name}</ImageContainer>
+          {/*<Image
           src={'/image/games/melee.jpeg'}
           fill
           style={{
@@ -55,7 +56,7 @@ export function Card({
           draggable={false}
         /> 
         */}
-          {Name}
+          {BiggerCard && <div>test</div>}
         </MainContainer>
       </HitboxContainer>
     </>
