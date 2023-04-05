@@ -58,7 +58,7 @@ export function Carrousel() {
                 clearTimeout(mouseLeave);
                 setMouseLeave(1);
               }}
-              Name={data.name}
+              Data={data}
               BiggerCard={data?.biggerCard}
               index={index + 1}
               currentPage={currentPage}

@@ -1,19 +1,19 @@
 /* ----------------- External ----------------- */
 import React, { useEffect, useState } from 'react';
-// import Image from 'next/image';
+import Image from 'next/image';
 
 /* ----------------- Style ----------------- */
 import { HitboxContainer, MainContainer, ImageContainer } from './style';
 
 export function Card({
-  Name,
+  Data,
   onMouseOutCapture,
   onMouseOver,
   BiggerCard = false,
   index,
   currentPage,
 }: {
-  Name: string;
+  Data: any;
   onMouseOutCapture: () => void;
   onMouseOver: () => void;
   BiggerCard?: boolean;
@@ -44,19 +44,19 @@ export function Card({
           index={index}
           currentPage={currentPage}
         >
-          <ImageContainer> {Name}</ImageContainer>
-          {/*<Image
-          src={'/image/games/melee.jpeg'}
-          fill
-          style={{
-            objectFit: 'cover',
-            borderRadius: '3px',
-          }}
-          alt="Game"
-          draggable={false}
-        /> 
-        */}
-          {BiggerCard && <div>test</div>}
+          <ImageContainer>
+            <Image
+              src={Data.thumbUrl}
+              fill
+              style={{
+                objectFit: 'cover',
+                borderRadius: '3px',
+              }}
+              alt="Game"
+              draggable={false}
+            />
+          </ImageContainer>
+          {BiggerCard && <div>{Data.name}</div>}
         </MainContainer>
       </HitboxContainer>
     </>

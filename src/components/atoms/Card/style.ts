@@ -56,8 +56,8 @@ export const MainContainer = Styled.div`
     `}
     ${BiggerCard &&
     `
-      height: 21vw;
-      width: 24vw;
+      height: 22vw;
+      width: 25vw;
       top: -6vw;
       left: -3vw;
       ${
@@ -78,10 +78,12 @@ export const MainContainer = Styled.div`
 `;
 
 export const ImageContainer = Styled.div`
-    background: red;
     align-items: center !important;
     justify-content: flex-end !important;
     height: 100%;
     width: 100%;
-    max-height:13vw;
+    max-height:14vw !important;
+    img {
+      position: relative !important;
+    }
 `;

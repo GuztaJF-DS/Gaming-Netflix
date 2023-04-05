@@ -6,6 +6,7 @@ interface IFakeData {
   company: string[];
   esrbRating: string;
   averageTimeToBeat: number;
+  thumbUrl: string;
   platform: string[];
   biggerCard?: boolean;
 }
@@ -20,6 +21,7 @@ export const FakeData: IFakeData[] = [
     company: ['Nintendo EAD', 'Capcom'],
     esrbRating: 'E',
     averageTimeToBeat: 28,
+    thumbUrl: 'https://svgshare.com/i/rkc.svg',
     platform: ['Gamecube'],
   },
   {
@@ -31,6 +33,7 @@ export const FakeData: IFakeData[] = [
     company: ['Nintendo R&D1'],
     esrbRating: 'E',
     averageTimeToBeat: 8,
+    thumbUrl: 'https://svgshare.com/i/rkF.svg',
     platform: ['GBA'],
   },
   {
@@ -42,6 +45,7 @@ export const FakeData: IFakeData[] = [
     company: ['HAL Laboratory'],
     esrbRating: 'T',
     averageTimeToBeat: 15,
+    thumbUrl: 'https://svgshare.com/i/rmR.svg',
     platform: ['Gamecube'],
   },
   {
@@ -53,6 +57,7 @@ export const FakeData: IFakeData[] = [
     company: ['HAL Laboratory', 'Nintendo'],
     esrbRating: 'E',
     averageTimeToBeat: 6,
+    thumbUrl: 'https://svgshare.com/i/rjY.svg',
     platform: ['Gamecube'],
   },
   {
@@ -64,6 +69,7 @@ export const FakeData: IFakeData[] = [
     company: ['Intelligent Systems', 'Nintendo'],
     esrbRating: 'E',
     averageTimeToBeat: 30,
+    thumbUrl: 'https://svgshare.com/i/rkU.svg',
     platform: ['Gamecube'],
   },
   {
@@ -75,6 +81,7 @@ export const FakeData: IFakeData[] = [
     company: ['Nintendo'],
     esrbRating: 'E',
     averageTimeToBeat: 60,
+    thumbUrl: 'https://svgshare.com/i/rmE.svg',
     platform: ['Gamecube'],
   },
   {
@@ -85,6 +92,7 @@ export const FakeData: IFakeData[] = [
     company: ['Game Freak', 'Nintendo'],
     esrbRating: 'E',
     averageTimeToBeat: 25,
+    thumbUrl: 'https://svgshare.com/i/rjZ.svg',
     platform: ['Game Boy Advance'],
   },
   {
@@ -96,6 +104,7 @@ export const FakeData: IFakeData[] = [
     company: ['Silicon Knights', 'Nintendo'],
     esrbRating: 'M',
     averageTimeToBeat: 15,
+    thumbUrl: 'https://svgshare.com/i/rmF.svg',
     platform: ['Gamecube'],
   },
   {
@@ -107,6 +116,7 @@ export const FakeData: IFakeData[] = [
     company: ['Capcom'],
     esrbRating: 'M',
     averageTimeToBeat: 20,
+    thumbUrl: 'https://svgshare.com/i/rj_.svg',
     platform: ['Gamecube'],
   },
   {
@@ -118,6 +128,7 @@ export const FakeData: IFakeData[] = [
     company: ['Nintendo EAD'],
     esrbRating: 'E',
     averageTimeToBeat: 8.5,
+    thumbUrl: 'https://svgshare.com/i/rjC.svg',
     platform: ['GameCube'],
   },
 ];

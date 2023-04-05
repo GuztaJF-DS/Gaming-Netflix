@@ -14,4 +14,7 @@ module.exports = {
       },
     ];
   },
+  images: {
+    domains: ['ibb.co', 'images.unsplash.com'],
+  },
 };
