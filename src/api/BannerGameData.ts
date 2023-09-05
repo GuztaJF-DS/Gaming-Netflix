@@ -10,11 +10,13 @@ export const BannerData: IBannerData[] = [
     name: 'Melee',
   },
   {
-    description: 'A Description for Super Metroid',
+    description:
+      'An iconic action-adventure game where players control Samus Aran as she explores Zebes, a vast alien world.',
     name: 'SuperMetroid',
   },
   {
-    description: 'A Description for Bloodbourne',
+    description:
+      'A challenging action RPG set in a dark, gothic world filled with horrifying creatures and mysteries.',
     name: 'Bloodbourne',
   },
 ];
