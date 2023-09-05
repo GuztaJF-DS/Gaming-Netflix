@@ -1,10 +1,11 @@
 /* ----------------- External ----------------- */
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 /* ----------------- Molecules ----------------- */
 import { LargePlayButton } from '@/components/molecules/LargePlayButton';
 import { InfoButton } from '@/components/molecules/InfoButton';
+import { BannerData } from '@/api/BannerGameData';
 
 /* ----------------- Style ----------------- */
 import {
@@ -13,50 +14,58 @@ import {
   ContentContainer,
   LogoContainer,
   ButtonContainer,
+  DescriptionContainer,
 } from './style';
 
 export function MainCard() {
-  return (
-    <Container>
-      <ImageWrapper />
-      <Image
-        src={'/image/games/darksouls3.png'}
-        fill
-        style={{
-          objectFit: 'cover',
-          zIndex: 0,
-        }}
-        draggable={false}
-        alt="Game"
-      />
-      <ContentContainer>
-        <LogoContainer>
-          <Image
-            src={'/image/games/darksouls3Logo.png'}
-            style={{ objectFit: 'contain' }}
-            fill
-            draggable={false}
-            alt="Game"
-          />
-        </LogoContainer>
-        <h4>
-          The Lords of Cinder, long thought dead, have returned to their
-          thrones, but they are no longer the heroes they once were. You must
-          gather their ashes and kindle the fire anew, Ashen One.
-        </h4>
-        <ButtonContainer>
-          <LargePlayButton
-            onClick={() => {
-              console.log('play');
-            }}
-          />
-          <InfoButton
-            onClick={() => {
-              console.log('mario');
-            }}
-          />
-        </ButtonContainer>
-      </ContentContainer>
-    </Container>
-  );
+  const [randomNumber, SetRandomNumber] = useState<number>();
+  useEffect(() => {
+    SetRandomNumber(Math.floor(Math.random() * BannerData.length));
+    // SetRandomNumber(1);
+  }, []);
+  if (randomNumber !== undefined) {
+    return (
+      <Container>
+        <ImageWrapper />
+        <Image
+          src={`/games/banner/${BannerData[randomNumber]?.name}.png`}
+          fill
+          style={{
+            objectFit: 'cover',
+            zIndex: 0,
+          }}
+          draggable={false}
+          alt="Game"
+        />
+        <ContentContainer>
+          <LogoContainer>
+            <Image
+              src={`/games/logo/${BannerData[randomNumber]?.name}.png`}
+              style={{ objectFit: 'contain' }}
+              fill
+              draggable={false}
+              alt="Game"
+            />
+          </LogoContainer>
+          <DescriptionContainer>
+            {BannerData[randomNumber]?.description || ''}
+          </DescriptionContainer>
+          <ButtonContainer>
+            <LargePlayButton
+              onClick={() => {
+                console.log('play');
+              }}
+            />
+            <InfoButton
+              onClick={() => {
+                console.log('mario');
+              }}
+            />
+          </ButtonContainer>
+        </ContentContainer>
+      </Container>
+    );
+  } else {
+    return <>Loading</>;
+  }
 }

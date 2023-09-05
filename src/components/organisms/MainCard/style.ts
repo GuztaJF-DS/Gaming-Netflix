@@ -27,16 +27,19 @@ export const ContentContainer = Styled.div`
   height: auto;
   top: 30%;
   left: 4%;
-  h4 {
-    font-size:1.2vw ;
-    font-weight:400;
-    text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
-    margin-bottom: 13px;
-    @media screen and (max-width:768px){
-      margin-bottom: 4px;
-      font-size:1.4vw;
-    }
-  }
+`;
+
+export const DescriptionContainer = Styled.h4`
+  font-size:1.4vw ;
+  font-weight:600; 
+  color:white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #05050571;
+  text-shadow: 3px 3px 3px rgb(0 0 0 / 85%);
+  margin-bottom: 13px;
+  @media screen and (max-width:768px){
+    margin-bottom: 4px;
+    font-size:1.4vw;
 `;
 
 export const LogoContainer = Styled.div`
