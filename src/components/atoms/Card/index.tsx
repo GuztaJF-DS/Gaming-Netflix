@@ -1,52 +1,19 @@
 /* ----------------- External ----------------- */
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 /* ----------------- Style ----------------- */
 import { HitboxContainer, MainContainer, ImageContainer } from './style';
+import { IFakeData } from '@/api/FakeGameData';
 
-export function Card({
-  Data,
-  onMouseOutCapture,
-  onMouseOver,
-  BiggerCard = false,
-  index,
-  currentPage,
-}: {
-  Data: any;
-  onMouseOutCapture: () => void;
-  onMouseOver: () => void;
-  BiggerCard?: boolean;
-  index: number;
-  currentPage: number;
-}) {
-  const [transitionCard, setTransitionCard] = useState(false);
-
-  useEffect(() => {
-    if (BiggerCard === false) {
-      window.setTimeout(() => {
-        setTransitionCard(BiggerCard);
-      }, 500);
-    } else {
-      setTransitionCard(BiggerCard);
-    }
-  }, [BiggerCard]);
-
+export function Card({ Data }: { Data: IFakeData }) {
   return (
     <>
-      <HitboxContainer
-        onMouseLeave={onMouseOutCapture}
-        onMouseEnter={onMouseOver}
-      >
-        <MainContainer
-          BiggerCard={BiggerCard}
-          transitionCard={transitionCard}
-          index={index}
-          currentPage={currentPage}
-        >
+      <HitboxContainer>
+        <MainContainer>
           <ImageContainer>
             <Image
-              src={Data.thumbUrl}
+              src={`/games/cover/${Data.thumbUrl}.png`}
               fill
               style={{
                 objectFit: 'cover',
@@ -56,7 +23,6 @@ export function Card({
               draggable={false}
             />
           </ImageContainer>
-          {BiggerCard && <div>{Data.name}</div>}
         </MainContainer>
       </HitboxContainer>
     </>

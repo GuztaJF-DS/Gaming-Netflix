@@ -7,10 +7,10 @@ export const Container = Styled.div`
   overflow-y: visible;
   top:-5.63vw;
   z-index: 10;
+  height: 20vw;
   margin-bottom:4vw;
   > p {
      z-index: -10 !important;
-    margin-left:4vw;
     margin-bottom:10px;
     font-size: 1.4vw;
     line-height: 1.25vw;
@@ -26,10 +26,12 @@ export const Container = Styled.div`
 
 export const CardContainer = Styled.div`
   ${({ currentPage = 0 }: { currentPage?: number }) => css`
-    display: flex;
+    display: grid;
+    grid-template-areas: 'overlap';
+    margin-left: 1em;
+    grid: auto / auto-flow max-content;
+    grid-gap: 2em;
     align-items: center;
-    display: flex;
-    max-height: fit-content;
     transition: transform 0.5s;
     transform: translateX(calc(-92.7vw * ${currentPage}));
   `}
