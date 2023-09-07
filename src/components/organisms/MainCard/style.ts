@@ -4,6 +4,7 @@ import Styled from 'styled-components';
 export const Container = Styled.div`
   display: flex;
   height: 50vw;
+  min-height: 50vw;
   position: relative;
   img {
     max-width:100vw;

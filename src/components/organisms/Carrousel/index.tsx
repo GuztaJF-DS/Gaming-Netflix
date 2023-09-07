@@ -10,7 +10,7 @@ import Arrow from '../../../../public/svg/arrow-icon.svg';
 import { Container, CardContainer, MoveButton } from './style';
 
 export function Carrousel() {
-  const [currentPage, setCurrentPage] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState<number>(2);
   // const [mouseLeave, setMouseLeave] = useState<number>();
 
   function UpdatePage(sum: boolean) {

@@ -12,6 +12,7 @@ export const Container = Styled.div`
   > p {
      z-index: -10 !important;
     margin-bottom:10px;
+    margin-left:20px;
     font-size: 1.4vw;
     line-height: 1.25vw;
     font-weight: 500;
@@ -32,7 +33,7 @@ export const CardContainer = Styled.div`
     grid-auto-flow: column;
     grid-gap: 2.7vw;
     align-items: center;
-    transition: transform 0.5s;
+    transition: transform 1s;
     transform: translateX(calc((-16.27vw * 6) * ${currentPage}));
   `}
 `;
@@ -45,7 +46,7 @@ export const MoveButton = Styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: hsla(0, 100%, 50%, 0.418);
+  background: hsla(0, 0%, 3%, 0.418);
   border: none;
   width: 2vw;
   height: 15vw;
