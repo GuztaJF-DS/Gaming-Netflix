@@ -15,6 +15,19 @@ export const Global = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'NetflixSans-Regular';
     font-size:1.4vw;
+    scrollbar-width: 5px;
+    scrollbar-color: #333333 #cccccc;
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #cccccc;
+    }
+    ::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    border-radius: 10px;
+  }
   }
   html{
     scroll-behavior:smooth;

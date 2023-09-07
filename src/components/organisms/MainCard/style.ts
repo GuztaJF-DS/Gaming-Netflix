@@ -3,7 +3,7 @@ import Styled from 'styled-components';
 
 export const Container = Styled.div`
   display: flex;
-  height: 49vw;
+  height: 50vw;
   position: relative;
   img {
     max-width:100vw;
@@ -40,6 +40,7 @@ export const DescriptionContainer = Styled.h4`
   @media screen and (max-width:768px){
     margin-bottom: 4px;
     font-size:1.4vw;
+  }
 `;
 
 export const LogoContainer = Styled.div`

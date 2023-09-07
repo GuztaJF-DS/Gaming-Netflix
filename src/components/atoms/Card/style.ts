@@ -3,7 +3,6 @@ import Styled from 'styled-components';
 
 export const HitboxContainer = Styled.div`
   display: flex;
-  background: red;
   position: relative;
 `;
 
@@ -15,7 +14,7 @@ export const MainContainer = Styled.div`
     rgba(0, 0, 0, 1) 100%
   );
   height: 19vw;
-  width: 13,57vw;
+  width: 13.57vw;
 `;
 
 export const ImageContainer = Styled.div`

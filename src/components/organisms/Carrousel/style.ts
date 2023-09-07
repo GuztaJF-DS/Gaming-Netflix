@@ -28,12 +28,12 @@ export const CardContainer = Styled.div`
   ${({ currentPage = 0 }: { currentPage?: number }) => css`
     display: grid;
     grid-template-areas: 'overlap';
-    margin-left: 1em;
-    grid: auto / auto-flow max-content;
-    grid-gap: 2em;
+    margin-left: 2.35vw;
+    grid-auto-flow: column;
+    grid-gap: 2.7vw;
     align-items: center;
     transition: transform 0.5s;
-    transform: translateX(calc(-92.7vw * ${currentPage}));
+    transform: translateX(calc((-16.27vw * 6) * ${currentPage}));
   `}
 `;
 
@@ -45,10 +45,10 @@ export const MoveButton = Styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: hsla(0, 0%, 0%, 0.5);
+  background: hsla(0, 100%, 50%, 0.418);
   border: none;
-  width: 2.8vw !important;
-  height: 11vw;
+  width: 2vw;
+  height: 15vw;
   :first-child{
     border-top-right-radius:4px;
     border-bottom-right-radius:4px;
@@ -65,7 +65,7 @@ export const MoveButton = Styled.button`
     width: 1.2vw;
     fill:white;
   }
-  :hover {
-    background: hsla(0, 0%, 0%, 0.63);
-  }
+  /* :hover {
+    background: hsla(0, 0%, 0%, 0.3);
+  } */
 `;
