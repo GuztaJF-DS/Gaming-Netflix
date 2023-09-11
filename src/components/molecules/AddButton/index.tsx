@@ -22,9 +22,9 @@ export function AddButton({ onClick }: IDefaultButton) {
       }}
     >
       {added ? (
-        <Add width={20} height={20} fill={'rgba(255, 255, 255, 0.7)'} />
-      ) : (
         <Checked width={20} height={20} fill={'rgba(255, 255, 255, 0.7)'} />
+      ) : (
+        <Add width={20} height={20} fill={'rgba(255, 255, 255, 0.7)'} />
       )}
     </RoundButton>
   );

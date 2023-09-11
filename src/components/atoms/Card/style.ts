@@ -33,7 +33,7 @@ ${({
     ${DelayHover &&
     `
       position: absolute;
-     z-index:2;
+      z-index:2;
   `}
     ${MainHover &&
     `
@@ -79,4 +79,29 @@ export const ImageContainer = Styled.div`
     img {
       position: relative !important;
     }
+`;
+
+export const BottomContainer = Styled.div`
+  ${({ MainHover }: { MainHover: boolean }) => css`
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 80%;
+    width: 100%;
+    height: 20%;
+    z-index: 3;
+    background: #1b1b1bd8;
+    transition: opacity 0.2s;
+    opacity: 0;
+    ${MainHover &&
+    `
+      opacity:1;
+    `}
+  `}
+`;
+
+export const BottomButton = Styled.button`
+  color:black;
+  height:30px;
 `;

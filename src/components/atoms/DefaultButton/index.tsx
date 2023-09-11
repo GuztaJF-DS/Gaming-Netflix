@@ -13,11 +13,15 @@ export function DefaultButton({
   fontColor,
   children,
   onClick,
+  fontSize,
+  paddingSize,
 }: IDefaultButton) {
   return (
     <CustomButton
       backgroundColor={backgroundColor}
       fontColor={fontColor}
+      fontSize={fontSize}
+      paddingSize={paddingSize}
       onClick={onClick}
     >
       <>

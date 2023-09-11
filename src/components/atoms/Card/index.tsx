@@ -9,8 +9,14 @@ import {
   MainContainer,
   MaskContainer,
   ImageContainer,
+  BottomContainer,
+  BottomButton,
 } from './style';
 import { IFakeData } from '@/api/FakeGameData';
+import { LargePlayButton } from '@/components/molecules/LargePlayButton';
+import { InfoButton } from '@/components/molecules/InfoButton';
+import { PlayButton } from '@/components/molecules/PlayButton';
+import { AddButton } from '@/components/molecules/AddButton';
 
 export function Card({ Data, index }: { Data: IFakeData; index: number }) {
   const [mainHover, setMainHover] = useState(false);
@@ -61,6 +67,18 @@ export function Card({ Data, index }: { Data: IFakeData; index: number }) {
               alt="Game"
               draggable={false}
             />
+            <BottomContainer MainHover={mainHover}>
+              <PlayButton
+                onClick={() => {
+                  console.log('play');
+                }}
+              />
+              <AddButton
+                onClick={() => {
+                  console.log('play');
+                }}
+              />
+            </BottomContainer>
           </ImageContainer>
         </MainContainer>
       </HitboxContainer>
