@@ -17,11 +17,13 @@ export function Card({
   onMouseOutCapture,
   onMouseOver,
   LargerCard = false,
+  index,
 }: {
   Data: IFakeData;
   onMouseOutCapture: () => void;
   onMouseOver: () => void;
   LargerCard?: boolean;
+  index: number;
 }) {
   const [cardHover, setCardHover] = useState(false);
   useEffect(() => {
@@ -41,7 +43,11 @@ export function Card({
         onMouseLeave={onMouseOutCapture}
       >
         <MaskContainer LargerCard={cardHover} />
-        <MainContainer Hovering={cardHover} LargerCard={LargerCard}>
+        <MainContainer
+          index={index}
+          Hovering={cardHover}
+          LargerCard={LargerCard}
+        >
           <ImageContainer>
             <Image
               src={`/games/cover/${Data.thumbUrl}.png`}

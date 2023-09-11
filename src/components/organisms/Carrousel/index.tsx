@@ -37,7 +37,7 @@ export function Carrousel() {
       )}
       <p>GameCube Era</p>
       <CardContainer currentPage={currentPage}>
-        {FakeData.map(data => (
+        {FakeData.map((data, index) => (
           <Card
             onMouseOver={() => {
               setMouseLeave(
@@ -53,6 +53,7 @@ export function Carrousel() {
               setMouseLeave(1);
             }}
             Data={data}
+            index={index + 1}
             LargerCard={data?.LargerCard}
           />
         ))}
