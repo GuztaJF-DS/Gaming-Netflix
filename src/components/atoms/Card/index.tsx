@@ -10,11 +10,8 @@ import {
   MaskContainer,
   ImageContainer,
   BottomContainer,
-  BottomButton,
 } from './style';
 import { IFakeData } from '@/api/FakeGameData';
-import { LargePlayButton } from '@/components/molecules/LargePlayButton';
-import { InfoButton } from '@/components/molecules/InfoButton';
 import { PlayButton } from '@/components/molecules/PlayButton';
 import { AddButton } from '@/components/molecules/AddButton';
 

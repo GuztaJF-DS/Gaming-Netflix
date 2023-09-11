@@ -100,8 +100,3 @@ export const BottomContainer = Styled.div`
     `}
   `}
 `;
-
-export const BottomButton = Styled.button`
-  color:black;
-  height:30px;
-`;
