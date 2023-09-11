@@ -8,7 +8,7 @@ export interface IFakeData {
   averageTimeToBeat: number;
   thumbUrl: string;
   platform: string[];
-  biggerCard?: boolean;
+  LargerCard?: boolean;
 }
 
 export const FakeData: IFakeData[] = [

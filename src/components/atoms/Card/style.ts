@@ -1,5 +1,5 @@
 /* ----------------- External ----------------- */
-import Styled from 'styled-components';
+import Styled, { css } from 'styled-components';
 
 export const HitboxContainer = Styled.div`
   display: flex;
@@ -7,6 +7,7 @@ export const HitboxContainer = Styled.div`
 `;
 
 export const MainContainer = Styled.div`
+${({ Hovering, LargerCard }: { Hovering: boolean; LargerCard: boolean }) => css`
   background: rgb(70, 70, 70);
   background: linear-gradient(
     180deg,
@@ -15,6 +16,34 @@ export const MainContainer = Styled.div`
   );
   height: 19vw;
   width: 13.57vw;
+  left: 0px;
+  top: 0px;
+  transition: height 0.4s, width 0.4s, top 0.4s, left 0.4s;
+  ${Hovering &&
+  `
+      position: absolute;
+  `}
+  ${LargerCard &&
+  `
+      left: -1.7vw;
+      top: -2.5vw;
+      height: 24vw;
+      width: 17.143vw;
+    `}
+`}
+`;
+
+export const MaskContainer = Styled.div` 
+  ${({ LargerCard }: { LargerCard: boolean }) => css`
+    background: rgb(51, 51, 51);
+    position: absolute;
+    height: 19vw;
+    width: 13.57vw;
+    ${LargerCard &&
+    `
+      position: static;
+    `}
+  `}
 `;
 
 export const ImageContainer = Styled.div`

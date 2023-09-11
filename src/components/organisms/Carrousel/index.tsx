@@ -10,8 +10,8 @@ import Arrow from '../../../../public/svg/arrow-icon.svg';
 import { Container, CardContainer, MoveButton } from './style';
 
 export function Carrousel() {
-  const [currentPage, setCurrentPage] = useState<number>(2);
-  // const [mouseLeave, setMouseLeave] = useState<number>();
+  const [currentPage, setCurrentPage] = useState<number>(0);
+  const [mouseLeave, setMouseLeave] = useState<number>();
 
   function UpdatePage(sum: boolean) {
     if (sum) {
@@ -39,24 +39,21 @@ export function Carrousel() {
       <CardContainer currentPage={currentPage}>
         {FakeData.map(data => (
           <Card
-            // onMouseOver={() => {
-            //   setMouseLeave(
-            //     window.setTimeout(() => {
-            //       data.biggerCard = true;
-            //       console.log('enter');
-            //       setMouseLeave(0);
-            //     }, 500),
-            //   );
-            // }}
-            // onMouseOutCapture={() => {
-            //   data.biggerCard = false;
-            //   console.log('leave');
-            //   clearTimeout(mouseLeave);
-            //   setMouseLeave(1);
-            // }}
+            onMouseOver={() => {
+              setMouseLeave(
+                window.setTimeout(() => {
+                  data.LargerCard = true;
+                  setMouseLeave(0);
+                }, 500),
+              );
+            }}
+            onMouseOutCapture={() => {
+              data.LargerCard = false;
+              clearTimeout(mouseLeave);
+              setMouseLeave(1);
+            }}
             Data={data}
-            // index={index + 1}
-            // currentPage={currentPage}
+            LargerCard={data?.LargerCard}
           />
         ))}
       </CardContainer>
