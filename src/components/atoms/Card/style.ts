@@ -8,15 +8,16 @@ export const HitboxContainer = Styled.div`
 
 export const MainContainer = Styled.div`
 ${({
-  Hovering,
-  LargerCard,
-  index,
+  DelayHover,
+  MainHover,
+  Index,
+  CurrentPage,
 }: {
-  Hovering: boolean;
-  LargerCard: boolean;
-  index: number;
+  DelayHover: boolean;
+  MainHover: boolean;
+  Index: number;
+  CurrentPage: number;
 }) => {
-  const currentPage = Math.ceil(index / 6);
   return css`
     background: rgb(70, 70, 70);
     background: linear-gradient(
@@ -29,12 +30,12 @@ ${({
     left: 0px;
     top: 0px;
     transition: height 0.4s, width 0.4s, top 0.4s, left 0.4s;
-    ${Hovering &&
+    ${DelayHover &&
     `
       position: absolute;
      z-index:2;
   `}
-    ${LargerCard &&
+    ${MainHover &&
     `
       z-index:2;
       left: -1.7vw;
@@ -42,14 +43,14 @@ ${({
       height: 24vw;
       width: 17.143vw;
       ${
-        index % 6 === 0
+        Index % 6 === 0
           ? `
-          left: -3.5vw;
-        `
-          : index === 6 * currentPage - 5 &&
+            left: -3.5vw;
+          `
+          : Index === 6 * CurrentPage - 5 &&
             `
-          left: 0px;
-        `
+            left: 0px;
+          `
       }
     `}
   `;
@@ -57,12 +58,12 @@ ${({
 `;
 
 export const MaskContainer = Styled.div` 
-  ${({ LargerCard }: { LargerCard: boolean }) => css`
+  ${({ MainHover }: { MainHover: boolean }) => css`
     background: rgb(51, 51, 51);
     position: absolute;
     height: 19vw;
     width: 13.57vw;
-    ${LargerCard &&
+    ${MainHover &&
     `
       position: static;
     `}

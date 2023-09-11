@@ -12,41 +12,43 @@ import {
 } from './style';
 import { IFakeData } from '@/api/FakeGameData';
 
-export function Card({
-  Data,
-  onMouseOutCapture,
-  onMouseOver,
-  LargerCard = false,
-  index,
-}: {
-  Data: IFakeData;
-  onMouseOutCapture: () => void;
-  onMouseOver: () => void;
-  LargerCard?: boolean;
-  index: number;
-}) {
-  const [cardHover, setCardHover] = useState(false);
+export function Card({ Data, index }: { Data: IFakeData; index: number }) {
+  const [mainHover, setMainHover] = useState(false);
+  const [delayHover, setDelayHover] = useState(false);
+  const [mouseTimer, setMouseTimer] = useState<number>();
   useEffect(() => {
-    if (LargerCard) {
-      setCardHover(LargerCard);
+    if (mainHover) {
+      setDelayHover(mainHover);
     } else {
       sleep(400).then(() => {
-        setCardHover(LargerCard);
+        setDelayHover(mainHover);
       });
     }
-  }, [LargerCard]);
+  }, [mainHover]);
 
   return (
     <>
       <HitboxContainer
-        onMouseEnter={onMouseOver}
-        onMouseLeave={onMouseOutCapture}
+        onMouseEnter={() => {
+          setMouseTimer(
+            window.setTimeout(() => {
+              setMainHover(true);
+              setMouseTimer(0);
+            }, 500),
+          );
+        }}
+        onMouseLeave={() => {
+          setMainHover(false);
+          clearTimeout(mouseTimer);
+          setMouseTimer(1);
+        }}
       >
-        <MaskContainer LargerCard={cardHover} />
+        <MaskContainer MainHover={delayHover} />
         <MainContainer
-          index={index}
-          Hovering={cardHover}
-          LargerCard={LargerCard}
+          Index={index}
+          DelayHover={delayHover}
+          MainHover={mainHover}
+          CurrentPage={Math.ceil(index / 6)}
         >
           <ImageContainer>
             <Image

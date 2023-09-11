@@ -11,7 +11,6 @@ import { Container, CardContainer, MoveButton } from './style';
 
 export function Carrousel() {
   const [currentPage, setCurrentPage] = useState<number>(0);
-  const [mouseLeave, setMouseLeave] = useState<number>();
 
   function UpdatePage(sum: boolean) {
     if (sum) {
@@ -38,24 +37,7 @@ export function Carrousel() {
       <p>GameCube Era</p>
       <CardContainer currentPage={currentPage}>
         {FakeData.map((data, index) => (
-          <Card
-            onMouseOver={() => {
-              setMouseLeave(
-                window.setTimeout(() => {
-                  data.LargerCard = true;
-                  setMouseLeave(0);
-                }, 500),
-              );
-            }}
-            onMouseOutCapture={() => {
-              data.LargerCard = false;
-              clearTimeout(mouseLeave);
-              setMouseLeave(1);
-            }}
-            Data={data}
-            index={index + 1}
-            LargerCard={data?.LargerCard}
-          />
+          <Card Data={data} index={index + 1} />
         ))}
       </CardContainer>
       <MoveButton
