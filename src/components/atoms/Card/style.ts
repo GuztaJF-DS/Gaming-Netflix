@@ -25,8 +25,8 @@ ${({
       rgba(70, 70, 70, 1) 0%,
       rgba(0, 0, 0, 1) 100%
     );
-    height: 19vw;
-    width: 13.57vw;
+    height: 19.5vw;
+    width: 13.929vw;
     left: 0px;
     top: 0px;
     transition: height 0.4s, width 0.4s, top 0.4s, left 0.4s;
@@ -61,8 +61,8 @@ export const MaskContainer = Styled.div`
   ${({ MainHover }: { MainHover: boolean }) => css`
     background: rgb(51, 51, 51);
     position: absolute;
-    height: 19vw;
-    width: 13.57vw;
+    height: 19.5vw;
+    width: 13.929vw;
     ${MainHover &&
     `
       position: static;

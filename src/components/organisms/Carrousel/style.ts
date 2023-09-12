@@ -29,12 +29,12 @@ export const CardContainer = Styled.div`
   ${({ currentPage = 0 }: { currentPage?: number }) => css`
     display: grid;
     grid-template-areas: 'overlap';
-    margin-left: 2.35vw;
+    margin-left: 2.2vw;
     grid-auto-flow: column;
-    grid-gap: 2.7vw;
+    grid-gap: 2.35vw;
     align-items: center;
     transition: transform 1s;
-    transform: translateX(calc((-16.27vw * 6) * ${currentPage}));
+    transform: translateX(calc((-16.279vw * 6) * ${currentPage}));
   `}
 `;
 
