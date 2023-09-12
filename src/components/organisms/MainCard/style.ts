@@ -4,8 +4,11 @@ import Styled from 'styled-components';
 export const Container = Styled.div`
   display: flex;
   height: 50vw;
+  background: #131313;
   min-height: 50vw;
   position: relative;
+  justify-content:center;
+  align-items:center;
   img {
     max-width:100vw;
   }

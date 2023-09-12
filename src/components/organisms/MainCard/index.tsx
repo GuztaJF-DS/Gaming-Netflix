@@ -66,6 +66,6 @@ export function MainCard() {
       </Container>
     );
   } else {
-    return <>Loading</>;
+    return <Container>Loading</Container>;
   }
 }
