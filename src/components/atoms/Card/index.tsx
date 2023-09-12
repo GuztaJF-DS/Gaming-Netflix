@@ -1,62 +1,84 @@
 /* ----------------- External ----------------- */
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import sleep from '@/utils/sleep';
 
 /* ----------------- Style ----------------- */
-import { HitboxContainer, MainContainer, ImageContainer } from './style';
+import {
+  HitboxContainer,
+  MainContainer,
+  MaskContainer,
+  ImageContainer,
+  BottomContainer,
+  NameContainer,
+} from './style';
+import { IFakeData } from '@/api/FakeGameData';
+import { PlayButton } from '@/components/molecules/PlayButton';
+import { AddButton } from '@/components/molecules/AddButton';
 
-export function Card({
-  Data,
-  onMouseOutCapture,
-  onMouseOver,
-  BiggerCard = false,
-  index,
-  currentPage,
-}: {
-  Data: any;
-  onMouseOutCapture: () => void;
-  onMouseOver: () => void;
-  BiggerCard?: boolean;
-  index: number;
-  currentPage: number;
-}) {
-  const [transitionCard, setTransitionCard] = useState(false);
-
+export function Card({ Data, index }: { Data: IFakeData; index: number }) {
+  const [mainHover, setMainHover] = useState(false);
+  const [delayHover, setDelayHover] = useState(false);
+  const [mouseTimer, setMouseTimer] = useState<number>();
   useEffect(() => {
-    if (BiggerCard === false) {
-      window.setTimeout(() => {
-        setTransitionCard(BiggerCard);
-      }, 500);
+    if (mainHover) {
+      setDelayHover(mainHover);
     } else {
-      setTransitionCard(BiggerCard);
+      sleep(400).then(() => {
+        setDelayHover(mainHover);
+      });
     }
-  }, [BiggerCard]);
+  }, [mainHover]);
 
   return (
     <>
       <HitboxContainer
-        onMouseLeave={onMouseOutCapture}
-        onMouseEnter={onMouseOver}
+        onMouseEnter={() => {
+          setMouseTimer(
+            window.setTimeout(() => {
+              setMainHover(true);
+              setMouseTimer(0);
+            }, 500),
+          );
+        }}
+        onMouseLeave={() => {
+          setMainHover(false);
+          clearTimeout(mouseTimer);
+          setMouseTimer(1);
+        }}
       >
+        <MaskContainer MainHover={delayHover}>{Data.name}</MaskContainer>
         <MainContainer
-          BiggerCard={BiggerCard}
-          transitionCard={transitionCard}
-          index={index}
-          currentPage={currentPage}
+          Index={index}
+          DelayHover={delayHover}
+          MainHover={mainHover}
+          CurrentPage={Math.ceil(index / 6)}
         >
           <ImageContainer>
             <Image
-              src={Data.thumbUrl}
+              src={`/games/cover/${Data.thumbUrl}.png`}
               fill
               style={{
                 objectFit: 'cover',
-                borderRadius: '3px',
+                borderRadius: '5px',
               }}
               alt="Game"
               draggable={false}
             />
+            <BottomContainer MainHover={mainHover}>
+              <NameContainer>{Data.name}</NameContainer>
+              <PlayButton
+                onClick={() => {
+                  console.log('play');
+                }}
+              />
+              <AddButton
+                onClick={() => {
+                  console.log('play');
+                }}
+              />
+            </BottomContainer>
           </ImageContainer>
-          {BiggerCard && <div>{Data.name}</div>}
         </MainContainer>
       </HitboxContainer>
     </>

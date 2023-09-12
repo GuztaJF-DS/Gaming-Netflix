@@ -7,11 +7,15 @@ export const Container = Styled.div`
   overflow-y: visible;
   top:-5.63vw;
   z-index: 10;
-  margin-bottom:4vw;
+  height: 20vw;
+  margin-bottom:8vw;
+  :last-child {
+    margin-bottom:0vw;
+  }
   > p {
      z-index: -10 !important;
-    margin-left:4vw;
     margin-bottom:10px;
+    margin-left:20px;
     font-size: 1.4vw;
     line-height: 1.25vw;
     font-weight: 500;
@@ -26,12 +30,14 @@ export const Container = Styled.div`
 
 export const CardContainer = Styled.div`
   ${({ currentPage = 0 }: { currentPage?: number }) => css`
-    display: flex;
+    display: grid;
+    grid-template-areas: 'overlap';
+    margin-left: 2.2vw;
+    grid-auto-flow: column;
+    grid-gap: 2.35vw;
     align-items: center;
-    display: flex;
-    max-height: fit-content;
-    transition: transform 0.5s;
-    transform: translateX(calc(-92.7vw * ${currentPage}));
+    transition: transform 1s;
+    transform: translateX(calc((-16.279vw * 6) * ${currentPage}));
   `}
 `;
 
@@ -43,10 +49,10 @@ export const MoveButton = Styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: hsla(0, 0%, 0%, 0.5);
+  background: hsla(0, 0%, 3%, 0.418);
   border: none;
-  width: 2.8vw !important;
-  height: 11vw;
+  width: 2vw;
+  height: 15vw;
   :first-child{
     border-top-right-radius:4px;
     border-bottom-right-radius:4px;
@@ -64,6 +70,6 @@ export const MoveButton = Styled.button`
     fill:white;
   }
   :hover {
-    background: hsla(0, 0%, 0%, 0.63);
+    background: hsla(0, 0%, 0%, 0.5);
   }
 `;

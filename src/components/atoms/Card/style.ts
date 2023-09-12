@@ -2,88 +2,113 @@
 import Styled, { css } from 'styled-components';
 
 export const HitboxContainer = Styled.div`
-  margin: 0px 0.37vw;
-  color: green;
   display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: flex-end;
-  height: 10vw;
-  width: 18vw;
-  flex: 0 0 17.8vw;
   position: relative;
-  :first-child {
-    margin-left: 3.5vw;
-  }
-  div {
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
 `;
 
 export const MainContainer = Styled.div`
-  ${({
-    BiggerCard,
-    transitionCard,
-    index,
-    currentPage,
-  }: {
-    BiggerCard: boolean;
-    transitionCard: boolean;
-    index: number;
-    currentPage: number;
-  }) => css`
-    position: absolute;
-    z-index: 0;
+${({
+  DelayHover,
+  MainHover,
+  Index,
+  CurrentPage,
+}: {
+  DelayHover: boolean;
+  MainHover: boolean;
+  Index: number;
+  CurrentPage: number;
+}) => {
+  return css`
+    border-radius: 5px;
+    height: 19.5vw;
+    width: 13.929vw;
+    left: 0px;
+    top: 0px;
+    transition: height 0.4s, width 0.4s, top 0.4s, left 0.4s;
+    ${DelayHover &&
+    `
+      position: absolute;
+      z-index:2;
+  `}
+    ${MainHover &&
+    `
+      z-index:2;
+      left: -1.7vw;
+      top: -2.5vw;
+      height: 24vw;
+      width: 17.143vw;
+      ${
+        Index % 6 === 0
+          ? `
+            left: -3.2vw;
+          `
+          : Index === 6 * CurrentPage - 5 &&
+            `
+            left: 0px;
+          `
+      }
+    `}
+  `;
+}}
+`;
+
+export const MaskContainer = Styled.div` 
+  ${({ MainHover }: { MainHover: boolean }) => css`
     background: rgb(70, 70, 70);
     background: linear-gradient(
       180deg,
       rgba(70, 70, 70, 1) 0%,
       rgba(0, 0, 0, 1) 100%
     );
-    height: 10vw;
-    width: 18vw;
-    top: 0px;
-    left: 0px;
-    transition: width 0.15s, height 0.15s, top 0.15s, left 0.15s, right 0.15s;
-    ${transitionCard &&
+    border-radius: 5px;
+    position: absolute;
+    height: 19.5vw;
+    width: 13.929vw;
+    ${MainHover &&
     `
-      z-index: 3 ;
-    `}
-    ${BiggerCard &&
-    `
-      height: 22vw;
-      width: 25vw;
-      top: -6vw;
-      left: -3vw;
-      ${
-        index % 5 === 0
-          ? `
-            left: -6vw;
-          `
-          : ''
-      }
-      ${
-        (index === 1 || index === 6 * currentPage - (currentPage - 1)) &&
-        `
-        left: 0px;
-        `
-      }
+      position: static;
     `}
   `}
 `;
 
 export const ImageContainer = Styled.div`
     align-items: center !important;
+    object-fit: cover;
     justify-content: flex-end !important;
     height: 100%;
+    background: transparent;
     width: 100%;
-    max-height:14vw !important;
     img {
       position: relative !important;
     }
+`;
+
+export const BottomContainer = Styled.div`
+  ${({ MainHover }: { MainHover: boolean }) => css`
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 80%;
+    width: 100%;
+    height: 20%;
+    z-index: 3;
+    background: #1b1b1bd8;
+    transition: opacity 0.2s;
+    opacity: 0;
+    ${MainHover &&
+    `
+      opacity:1;
+    `}
+  `}
+`;
+
+export const NameContainer = Styled.div`
+  display: flex;
+  width:10vw;
+  height: 100%;
+  overflow: hidden; 
+  font-size:85%;
+  padding-left:4px;
+  align-items:center;
 `;

@@ -10,12 +10,11 @@ import Arrow from '../../../../public/svg/arrow-icon.svg';
 import { Container, CardContainer, MoveButton } from './style';
 
 export function Carrousel() {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [mouseLeave, setMouseLeave] = useState<number>();
+  const [currentPage, setCurrentPage] = useState<number>(0);
 
   function UpdatePage(sum: boolean) {
     if (sum) {
-      if (currentPage + 1 < Math.ceil(FakeData.length / 5)) {
+      if (currentPage + 1 < Math.ceil(FakeData.length / 6)) {
         setCurrentPage(currentPage + 1);
       } else {
         setCurrentPage(0);
@@ -24,11 +23,9 @@ export function Carrousel() {
       setCurrentPage(currentPage - 1);
     }
   }
-
   return (
     <Container>
-      <p>GameCube/GBA Era</p>
-      {currentPage !== 0 ? (
+      {currentPage !== 0 && (
         <MoveButton
           onClick={() => {
             UpdatePage(false);
@@ -36,35 +33,12 @@ export function Carrousel() {
         >
           <Arrow />
         </MoveButton>
-      ) : (
-        ''
       )}
+      <p>GameCube Era</p>
       <CardContainer currentPage={currentPage}>
-        {FakeData.map((data, index) => {
-          return (
-            <Card
-              onMouseOver={() => {
-                setMouseLeave(
-                  window.setTimeout(() => {
-                    data.biggerCard = true;
-                    console.log('enter');
-                    setMouseLeave(0);
-                  }, 500),
-                );
-              }}
-              onMouseOutCapture={() => {
-                data.biggerCard = false;
-                console.log('leave');
-                clearTimeout(mouseLeave);
-                setMouseLeave(1);
-              }}
-              Data={data}
-              BiggerCard={data?.biggerCard}
-              index={index + 1}
-              currentPage={currentPage}
-            />
-          );
-        })}
+        {FakeData.map((data, index) => (
+          <Card Data={data} index={index + 1} />
+        ))}
       </CardContainer>
       <MoveButton
         onClick={() => {

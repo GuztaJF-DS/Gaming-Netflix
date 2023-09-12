@@ -31,7 +31,7 @@ export function MainCard() {
           src={`/games/banner/${BannerData[randomNumber]?.name}.png`}
           fill
           style={{
-            objectFit: 'cover',
+            objectFit: 'contain',
             zIndex: 0,
           }}
           draggable={false}
@@ -66,6 +66,6 @@ export function MainCard() {
       </Container>
     );
   } else {
-    return <>Loading</>;
+    return <Container>Loading</Container>;
   }
 }
