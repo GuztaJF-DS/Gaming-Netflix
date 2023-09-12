@@ -10,6 +10,7 @@ import {
   MaskContainer,
   ImageContainer,
   BottomContainer,
+  NameContainer,
 } from './style';
 import { IFakeData } from '@/api/FakeGameData';
 import { PlayButton } from '@/components/molecules/PlayButton';
@@ -65,6 +66,7 @@ export function Card({ Data, index }: { Data: IFakeData; index: number }) {
               draggable={false}
             />
             <BottomContainer MainHover={mainHover}>
+              <NameContainer>{Data.name}</NameContainer>
               <PlayButton
                 onClick={() => {
                   console.log('play');
