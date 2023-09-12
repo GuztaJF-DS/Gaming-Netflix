@@ -47,7 +47,7 @@ export function Card({ Data, index }: { Data: IFakeData; index: number }) {
           setMouseTimer(1);
         }}
       >
-        <MaskContainer MainHover={delayHover} />
+        <MaskContainer MainHover={delayHover}>{Data.name}</MaskContainer>
         <MainContainer
           Index={index}
           DelayHover={delayHover}
@@ -60,7 +60,7 @@ export function Card({ Data, index }: { Data: IFakeData; index: number }) {
               fill
               style={{
                 objectFit: 'cover',
-                borderRadius: '3px',
+                borderRadius: '5px',
               }}
               alt="Game"
               draggable={false}

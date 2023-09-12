@@ -8,7 +8,10 @@ export const Container = Styled.div`
   top:-5.63vw;
   z-index: 10;
   height: 20vw;
-  margin-bottom:4vw;
+  margin-bottom:8vw;
+  :last-child {
+    margin-bottom:0vw;
+  }
   > p {
      z-index: -10 !important;
     margin-bottom:10px;
@@ -66,7 +69,7 @@ export const MoveButton = Styled.button`
     width: 1.2vw;
     fill:white;
   }
-  /* :hover {
-    background: hsla(0, 0%, 0%, 0.3);
-  } */
+  :hover {
+    background: hsla(0, 0%, 0%, 0.5);
+  }
 `;

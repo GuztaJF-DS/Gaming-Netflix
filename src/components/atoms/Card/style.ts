@@ -19,12 +19,7 @@ ${({
   CurrentPage: number;
 }) => {
   return css`
-    background: rgb(70, 70, 70);
-    background: linear-gradient(
-      180deg,
-      rgba(70, 70, 70, 1) 0%,
-      rgba(0, 0, 0, 1) 100%
-    );
+    border-radius: 5px;
     height: 19.5vw;
     width: 13.929vw;
     left: 0px;
@@ -45,7 +40,7 @@ ${({
       ${
         Index % 6 === 0
           ? `
-            left: -3.5vw;
+            left: -3.2vw;
           `
           : Index === 6 * CurrentPage - 5 &&
             `
@@ -59,7 +54,13 @@ ${({
 
 export const MaskContainer = Styled.div` 
   ${({ MainHover }: { MainHover: boolean }) => css`
-    background: rgb(51, 51, 51);
+    background: rgb(70, 70, 70);
+    background: linear-gradient(
+      180deg,
+      rgba(70, 70, 70, 1) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    border-radius: 5px;
     position: absolute;
     height: 19.5vw;
     width: 13.929vw;
@@ -75,6 +76,7 @@ export const ImageContainer = Styled.div`
     object-fit: cover;
     justify-content: flex-end !important;
     height: 100%;
+    background: transparent;
     width: 100%;
     img {
       position: relative !important;
