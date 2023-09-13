@@ -34,12 +34,12 @@ export const ContentContainer = Styled.div`
 `;
 
 export const DescriptionContainer = Styled.h4`
-  font-size:1.4vw ;
+  font-size:1.4vw;
   font-weight:600; 
   color:white;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 0.1vw;
   -webkit-text-stroke-color: #05050571;
-  text-shadow: 3px 3px 3px rgb(0 0 0 / 85%);
+  text-shadow: 0.3vw 0.3vw 0.3vw rgb(0 0 0 / 85%);
   margin-bottom: 13px;
   @media screen and (max-width:768px){
     margin-bottom: 4px;

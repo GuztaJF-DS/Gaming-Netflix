@@ -29,7 +29,7 @@ export const CustomButton = Styled.button`
       filter: opacity(65%);
     }
     :focus {
-      outline: 2px solid #ffffff;
+      outline: 0.2vw solid #ffffff;
     }
   `}
 `;

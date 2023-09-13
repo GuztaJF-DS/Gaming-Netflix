@@ -11,18 +11,22 @@ export const CustomButton = Styled.button`
     justify-content: center;
     align-items: center;
     border-radius: 100%;
-    height: 42px;
-    width: 42px;
+    height: 2.8vw;
+    width: 2.8vw;
     background-clip: padding-box;
-    border: 3px solid rgba(255, 255, 255, 0.5);
+    border: 0.2vw solid rgba(255, 255, 255, 0.5);
     :hover {
-      border: 3px solid hsla(0, 0%, 100%, 1);
+      border: 0.2vw solid hsla(0, 0%, 100%, 1);
     }
     :active {
       filter: opacity(65%);
     }
     :focus {
-      outline: 2px solid #ffffff;
+      outline: 0.2vw solid #ffffff;
+    }
+    @media (max-width: 425px) {
+      height: 3vw;
+      width: 0vw;
     }
   `}
 `;
@@ -30,4 +34,9 @@ export const CustomButton = Styled.button`
 export const ImageContainer = Styled.div`
   display: flex;
   background-color: transparent;
+  height: 1vw;
+  @media (max-width: 425px) {
+    height: 1vw;
+    width: 1vw;
+  }
 `;

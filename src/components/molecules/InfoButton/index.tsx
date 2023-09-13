@@ -18,7 +18,7 @@ export function InfoButton({ name = 'More Info', onClick }: IDefaultButton) {
       backgroundColor={'rgba(134, 134, 134, 0.7)'}
       fontColor={'#ffffff'}
     >
-      <Info width={20} height={20} fill={'#ffffff'} />
+      <Info width={'1vw'} height={'1vw'} fill={'#ffffff'} />
     </DefaultButton>
   );
 }

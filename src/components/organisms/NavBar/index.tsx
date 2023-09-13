@@ -45,8 +45,8 @@ export function NavBar() {
         </IconNav>
         <ProfilePic>
           <Image src={'/images/ProfilePic/Mario.png'} fill alt={'bell'} />
+          <p>▼</p>
         </ProfilePic>
-        ▼
       </IconContainer>
     </MainContainer>
   );
