@@ -1,6 +1,7 @@
 /* ----------------- External ----------------- */
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import sleep from '@/utils/sleep';
 
 /* ----------------- Style ----------------- */
@@ -17,6 +18,7 @@ import { PlayButton } from '@/components/molecules/PlayButton';
 import { AddButton } from '@/components/molecules/AddButton';
 
 export function Card({ Data, index }: { Data: IFakeData; index: number }) {
+  const router = useRouter();
   const [mainHover, setMainHover] = useState(false);
   const [delayHover, setDelayHover] = useState(false);
   const [mouseTimer, setMouseTimer] = useState<number>();
@@ -46,6 +48,11 @@ export function Card({ Data, index }: { Data: IFakeData; index: number }) {
           clearTimeout(mouseTimer);
           setMouseTimer(1);
         }}
+        onClick={() => {
+          router.replace({
+            query: { ...router.query, id: Data.id },
+          });
+        }}
       >
         <MaskContainer MainHover={delayHover}>{Data.name}</MaskContainer>
         <MainContainer
@@ -69,7 +76,9 @@ export function Card({ Data, index }: { Data: IFakeData; index: number }) {
               <NameContainer>{Data.name}</NameContainer>
               <PlayButton
                 onClick={() => {
-                  console.log('play');
+                  router.replace({
+                    query: { ...router.query, id: Data.id },
+                  });
                 }}
               />
               <AddButton

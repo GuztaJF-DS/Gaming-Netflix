@@ -1,6 +1,6 @@
 /* ----------------- External ----------------- */
-import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 /* ----------------- Molecules ----------------- */
 import { LargePlayButton } from '@/components/molecules/LargePlayButton';

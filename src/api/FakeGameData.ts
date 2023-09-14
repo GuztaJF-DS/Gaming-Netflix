@@ -1,4 +1,5 @@
 export interface IFakeData {
+  id: string;
   name: string;
   description: string;
   genres: string[];
@@ -13,6 +14,7 @@ export interface IFakeData {
 
 export const FakeData: IFakeData[] = [
   {
+    id: '1',
     name: 'The Legend of Zelda: The Wind Waker',
     description:
       'Link sets out on a seafaring adventure to rescue his sister and save the world from the evil sorcerer Ganon.',
@@ -25,6 +27,7 @@ export const FakeData: IFakeData[] = [
     platform: ['Gamecube'],
   },
   {
+    id: '2',
     name: 'Metroid Prime',
     description: 'Description for Metroid Prime',
     genres: ['Action-adventure', 'Sci-fi'],
@@ -36,6 +39,7 @@ export const FakeData: IFakeData[] = [
     platform: ['GBA'],
   },
   {
+    id: '3',
     name: 'Mario Kart: Double Dash',
     description:
       'Mario and his friends race karts on a variety of tracks, using power-ups to gain an advantage.',
@@ -48,6 +52,7 @@ export const FakeData: IFakeData[] = [
     platform: ['GameCube'],
   },
   {
+    id: '4',
     name: 'Resident Evil 4',
     description:
       "Follow Leon S. Kennedy on his mission to rescue the President's daughter from a remote village filled with terrifying creatures.",
@@ -60,6 +65,7 @@ export const FakeData: IFakeData[] = [
     platform: ['Gamecube'],
   },
   {
+    id: '5',
     name: 'Pikmin 2',
     description: 'Description for Pikmin 2',
     genres: ['Simulation'],
@@ -71,6 +77,7 @@ export const FakeData: IFakeData[] = [
     platform: ['Gamecube'],
   },
   {
+    id: '6',
     name: 'Sonic Adventure 2 Battle',
     description:
       'An action-adventure game featuring Sonic and his friends as they race against the evil Dr. Eggman to save the world.',
@@ -83,6 +90,7 @@ export const FakeData: IFakeData[] = [
     platform: ['GameCube'],
   },
   {
+    id: '7',
     name: 'Animal Crossing',
     description:
       'A delightful life simulation game where you move to a peaceful village and interact with anthropomorphic animal neighbors.',
@@ -95,6 +103,7 @@ export const FakeData: IFakeData[] = [
     platform: ['GameCube'],
   },
   {
+    id: '8',
     name: 'Kirby Air Ride',
     description:
       'Race through colorful courses as Kirby and his friends in this fast-paced Gamecube game.',
@@ -107,6 +116,7 @@ export const FakeData: IFakeData[] = [
     platform: ['Gamecube'],
   },
   {
+    id: '9',
     name: 'Paper Mario: The Thousand-Year Door',
     description:
       'Help Mario on his quest to save Princess Peach from the evil X-Nauts.',
@@ -119,6 +129,7 @@ export const FakeData: IFakeData[] = [
     platform: ['Gamecube'],
   },
   {
+    id: '10',
     name: 'Pokémon Colosseum',
     description: 'Description for Pokémon Colosseum',
     genres: ['Role-Playing'],
@@ -130,6 +141,7 @@ export const FakeData: IFakeData[] = [
     platform: ['Game Boy Advance'],
   },
   {
+    id: '11',
     name: "Eternal Darkness: Sanity's Requiem",
     description:
       'Play as different characters throughout history and uncover the truth behind a mysterious tome known as the Necronomicon.',
@@ -142,6 +154,7 @@ export const FakeData: IFakeData[] = [
     platform: ['Gamecube'],
   },
   {
+    id: '12',
     name: 'Super Smash Bros. Melee',
     description:
       'A multiplayer fighting game featuring a roster of Nintendo characters battling it out in iconic locations from their games.',
@@ -154,6 +167,7 @@ export const FakeData: IFakeData[] = [
     platform: ['Gamecube'],
   },
   {
+    id: '13',
     name: 'Chibi-Robo!',
     description:
       'An adventure game where you play as a tiny robot named Chibi-Robo who helps a family with their household chores and solves mysteries.',
@@ -166,6 +180,7 @@ export const FakeData: IFakeData[] = [
     thumbUrl: 'ChibiRobo',
   },
   {
+    id: '14',
     name: 'Crazy Taxi',
     description:
       'An arcade-style racing game where you take on the role of a taxi driver, racing against the clock to pick up and drop off passengers.',
@@ -178,6 +193,7 @@ export const FakeData: IFakeData[] = [
     thumbUrl: 'CrazyTaxi',
   },
   {
+    id: '15',
     name: 'F-Zero GX',
     description:
       'A high-speed futuristic racing game featuring a wide array of futuristic vehicles and intense tracks.',
@@ -190,30 +206,7 @@ export const FakeData: IFakeData[] = [
     thumbUrl: 'FZeroGX',
   },
   {
-    name: 'Ikaruga',
-    description:
-      'A vertically scrolling shooter game known for its unique polarity-switching mechanic, where players switch between two polarities to absorb or deflect enemy bullets.',
-    genres: ['Shooter'],
-    releaseYear: 2003,
-    company: ['Treasure'],
-    esrbRating: 'E',
-    averageTimeToBeat: 2,
-    platform: ['GameCube'],
-    thumbUrl: 'Ikaruga',
-  },
-  {
-    name: "Luigi's Mansion",
-    description:
-      'An action-adventure game where Luigi must navigate a haunted mansion to rescue his brother Mario.',
-    genres: ['Action', 'Adventure'],
-    releaseYear: 2001,
-    company: ['Nintendo EAD'],
-    esrbRating: 'E',
-    averageTimeToBeat: 8,
-    platform: ['GameCube'],
-    thumbUrl: 'LuigiMansion',
-  },
-  {
+    id: '16',
     name: 'Metal Gear Solid: The Twin Snakes',
     description:
       'A reimagining of the original Metal Gear Solid game with improved graphics and gameplay mechanics.',
@@ -226,30 +219,7 @@ export const FakeData: IFakeData[] = [
     thumbUrl: 'MGS1',
   },
   {
-    name: 'Phantasy Star Online Episode I & II',
-    description:
-      'An online multiplayer action RPG set in a sci-fi universe where players can team up to explore various worlds and battle enemies.',
-    genres: ['Action', 'RPG'],
-    releaseYear: 2002,
-    company: ['Sonic Team', 'Sega'],
-    esrbRating: 'T',
-    averageTimeToBeat: 40,
-    platform: ['GameCube'],
-    thumbUrl: 'PhantasyStar',
-  },
-  {
-    name: 'Pikmin',
-    description:
-      'A real-time strategy game where players control Captain Olimar and command a group of colorful creatures called Pikmin to solve puzzles and collect spaceship parts.',
-    genres: ['Strategy'],
-    releaseYear: 2001,
-    company: ['Nintendo EAD'],
-    esrbRating: 'E',
-    averageTimeToBeat: 10,
-    platform: ['GameCube'],
-    thumbUrl: 'Pikmin',
-  },
-  {
+    id: '17',
     name: 'Resident Evil',
     description:
       'A survival horror game and a remake of the original Resident Evil, known for its improved graphics and gameplay.',
@@ -262,6 +232,59 @@ export const FakeData: IFakeData[] = [
     thumbUrl: 'RE',
   },
   {
+    id: '18',
+    name: 'Ikaruga',
+    description:
+      'A vertically scrolling shooter game known for its unique polarity-switching mechanic, where players switch between two polarities to absorb or deflect enemy bullets.',
+    genres: ['Shooter'],
+    releaseYear: 2003,
+    company: ['Treasure'],
+    esrbRating: 'E',
+    averageTimeToBeat: 2,
+    platform: ['GameCube'],
+    thumbUrl: 'Ikaruga',
+  },
+  {
+    id: '19',
+    name: "Luigi's Mansion",
+    description:
+      'An action-adventure game where Luigi must navigate a haunted mansion to rescue his brother Mario.',
+    genres: ['Action', 'Adventure'],
+    releaseYear: 2001,
+    company: ['Nintendo EAD'],
+    esrbRating: 'E',
+    averageTimeToBeat: 8,
+    platform: ['GameCube'],
+    thumbUrl: 'LuigiMansion',
+  },
+  {
+    id: '20',
+    name: 'Phantasy Star Online Episode I & II',
+    description:
+      'An online multiplayer action RPG set in a sci-fi universe where players can team up to explore various worlds and battle enemies.',
+    genres: ['Action', 'RPG'],
+    releaseYear: 2002,
+    company: ['Sonic Team', 'Sega'],
+    esrbRating: 'T',
+    averageTimeToBeat: 40,
+    platform: ['GameCube'],
+    thumbUrl: 'PhantasyStar',
+  },
+  {
+    id: '21',
+    name: 'Pikmin',
+    description:
+      'A real-time strategy game where players control Captain Olimar and command a group of colorful creatures called Pikmin to solve puzzles and collect spaceship parts.',
+    genres: ['Strategy'],
+    releaseYear: 2001,
+    company: ['Nintendo EAD'],
+    esrbRating: 'E',
+    averageTimeToBeat: 10,
+    platform: ['GameCube'],
+    thumbUrl: 'Pikmin',
+  },
+  {
+    id: '22',
     name: 'Shadow the Hedgehog',
     description:
       "An action-adventure game featuring Sonic's rival, Shadow the Hedgehog, as he embarks on a quest to uncover his past.",
@@ -274,6 +297,7 @@ export const FakeData: IFakeData[] = [
     thumbUrl: 'Shadow',
   },
   {
+    id: '23',
     name: 'SoulCalibur II',
     description:
       'A fighting game featuring a roster of unique characters, each with their own weapon-based fighting style.',
@@ -286,6 +310,7 @@ export const FakeData: IFakeData[] = [
     thumbUrl: 'SoulCalibur2',
   },
   {
+    id: '24',
     name: 'Star Wars: Rogue Leader - Rogue Squadron II',
     description:
       'A flight combat game set in the Star Wars universe, where players take on the role of Rebel pilots in various missions.',
@@ -298,6 +323,7 @@ export const FakeData: IFakeData[] = [
     thumbUrl: 'StarWarsRougeLeader',
   },
   {
+    id: '25',
     name: 'Super Mario Strikers',
     description:
       'An arcade-style soccer game featuring Mario and friends, known for its fast-paced and competitive gameplay.',
@@ -310,6 +336,7 @@ export const FakeData: IFakeData[] = [
     thumbUrl: 'Strikers',
   },
   {
+    id: '26',
     name: "Tony Hawk's Pro Skater 3",
     description:
       'A skateboarding game that allows players to perform tricks and complete objectives in various skateparks.',
@@ -322,6 +349,7 @@ export const FakeData: IFakeData[] = [
     thumbUrl: 'THPS3',
   },
   {
+    id: '27',
     name: 'Tomb Raider: Legend',
     description:
       'An action-adventure game where players control Lara Croft as she embarks on a quest to uncover the mysteries of ancient artifacts.',
@@ -334,6 +362,7 @@ export const FakeData: IFakeData[] = [
     thumbUrl: 'TombRaiderLegend',
   },
   {
+    id: '28',
     name: 'The Legend of Zelda: Twilight Princess',
     description:
       'An action-adventure game in The Legend of Zelda series where Link must save Hyrule from an impending darkness.',
@@ -346,6 +375,7 @@ export const FakeData: IFakeData[] = [
     thumbUrl: 'TwilightPrincess',
   },
   {
+    id: '29',
     name: 'BloodRayne',
     description:
       'An action-adventure game where players control Rayne, a dhampir, as she battles supernatural threats.',
@@ -358,6 +388,7 @@ export const FakeData: IFakeData[] = [
     thumbUrl: 'Bloodrayne',
   },
   {
+    id: '30',
     name: 'Beyond Good & Evil',
     description:
       'An action-adventure game where players take on the role of a photojournalist named Jade as she investigates a conspiracy on a distant planet.',
