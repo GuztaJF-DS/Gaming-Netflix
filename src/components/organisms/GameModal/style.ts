@@ -1,5 +1,5 @@
 /* ----------------- External ----------------- */
-import Styled from 'styled-components';
+import Styled, { keyframes } from 'styled-components';
 
 export const Container = Styled.div`
   position: fixed;
@@ -41,30 +41,29 @@ export const CloseButton = Styled.button`
 export const BannerDiv = Styled.div`
   width: 100%;
   height: 30vw;
-  img {
-    border-top-left-radius: 1vw;
-    border-top-right-radius: 1vw;
-    position: static !important;
-  }
+  position: relative;
 `;
 
 export const ImageWrapper = Styled.div`
+  z-index:8;
   position: absolute;
   backdrop-filter:brightness(110%);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #202020b7 70%, #202020 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #202020b7 85%, #202020 100%);
   width: 100%;
-  height: 30vw;
+  height: 30.1vw;
 `;
 
 export const LogoDiv = Styled.div`
   display: flex;
   flex-direction:column;
   position: absolute;
-  top:15vw;
+  bottom:1vw;
   left:1vw;
+  z-index:10;
   width: 19vw;
   img {
     position: static !important;
+    max-height:10vw;
   }
   >div{
     margin-top:1vw;
@@ -74,5 +73,29 @@ export const LogoDiv = Styled.div`
     button:last-child{
       margin-left:0.6vw;
     }
+  }
+`;
+
+const MovingAnimation = keyframes`
+ 0% { transform: translateX(0vw); }
+ 5% { transform: translateX(0vw); }
+ 50% { transform: translateX(-17vw); }
+ 55% { transform: translateX(-17vw); }
+ 95% { transform: translateX(-33vw); }
+ 100% { transform: translateX(-33vw); }
+`;
+
+export const ImageContainer = Styled.div`
+  position: relative;
+  overflow-x: clip;
+  overflow-y: visible;
+  height: 30vw;
+  img{
+    position: absolute !important;
+    width:92.9vw !important;
+    animation-name: ${MovingAnimation};
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
 `;

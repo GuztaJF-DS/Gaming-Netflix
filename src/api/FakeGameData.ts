@@ -385,7 +385,7 @@ export const FakeData: IFakeData[] = [
     esrbRating: 'M',
     averageTimeToBeat: 8,
     platform: ['GameCube'],
-    thumbUrl: 'Bloodrayne',
+    thumbUrl: 'BloodRayne',
   },
   {
     id: '30',

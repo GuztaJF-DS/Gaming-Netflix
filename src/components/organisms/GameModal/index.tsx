@@ -15,6 +15,7 @@ import {
   BannerDiv,
   ImageWrapper,
   LogoDiv,
+  ImageContainer,
 } from './style';
 
 export function GameModal() {
@@ -22,7 +23,13 @@ export function GameModal() {
   const currentGame = FakeData.find(data => data.id === router.query.id);
   return (
     <>
-      <MaskBackground />
+      <MaskBackground
+        onClick={() => {
+          router.push({
+            query: undefined,
+          });
+        }}
+      />
       <Container>
         <CloseButton
           onClick={() => {
@@ -35,19 +42,9 @@ export function GameModal() {
         </CloseButton>
         <BannerDiv>
           <ImageWrapper />
-          <Image
-            src={`/games/banner/SuperMetroid.png`}
-            fill
-            style={{
-              objectFit: 'contain',
-              zIndex: 0,
-            }}
-            draggable={false}
-            alt="Game"
-          />
           <LogoDiv>
             <Image
-              src={`/games/logo/SuperMetroid.png`}
+              src={`/games/logo/${currentGame?.thumbUrl}.png`}
               fill
               style={{
                 objectFit: 'contain',
@@ -64,18 +61,30 @@ export function GameModal() {
               />
               <AddButton
                 onClick={() => {
-                  console.log('play');
+                  console.log('added');
                 }}
               />
               <LikeButton
                 onClick={() => {
-                  console.log('play');
+                  console.log('liked');
                 }}
               />
             </div>
           </LogoDiv>
+          <ImageContainer>
+            <Image
+              src={`/games/banner/${currentGame?.thumbUrl}.png`}
+              fill
+              style={{
+                objectFit: 'contain',
+                zIndex: 0,
+              }}
+              draggable={false}
+              alt="Game"
+            />
+          </ImageContainer>
         </BannerDiv>
-        {currentGame?.name}
+        {currentGame?.company.join(' - ')}
       </Container>
     </>
   );

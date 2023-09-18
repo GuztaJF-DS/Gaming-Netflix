@@ -11,11 +11,6 @@ export const BannerData: IBannerData[] = [
   },
   {
     description:
-      'An iconic action-adventure game where players control Samus Aran as she explores Zebes, a vast alien world.',
-    name: 'SuperMetroid',
-  },
-  {
-    description:
       'A challenging action RPG set in a dark, gothic world filled with horrifying creatures and mysteries.',
     name: 'Bloodbourne',
   },
