@@ -13,7 +13,7 @@ export const Container = Styled.div`
     margin-bottom:0vw;
   }
   > p {
-     z-index: -10 !important;
+    z-index: -10 !important;
     margin-bottom:10px;
     margin-left:20px;
     font-size: 1.4vw;
@@ -32,12 +32,12 @@ export const CardContainer = Styled.div`
   ${({ currentPage = 0 }: { currentPage?: number }) => css`
     display: grid;
     grid-template-areas: 'overlap';
-    margin-left: 2.2vw;
+    margin-left: 4.85vw;
     grid-auto-flow: column;
-    grid-gap: 2.35vw;
+    grid-gap: 2.38vw;
     align-items: center;
     transition: transform 1s;
-    transform: translateX(calc((-16.279vw * 6) * ${currentPage}));
+    transform: translateX(calc((-15.38vw * 6) * ${currentPage}));
   `}
 `;
 
@@ -51,7 +51,7 @@ export const MoveButton = Styled.button`
   justify-content: center;
   background: hsla(0, 0%, 3%, 0.418);
   border: none;
-  width: 2vw;
+  width: 2.5vw;
   height: 15vw;
   :first-child{
     border-top-right-radius:4px;

@@ -21,7 +21,7 @@ ${({
   return css`
     border-radius: 5px;
     height: 19.5vw;
-    width: 13.929vw;
+    width: 13vw;
     left: 0px;
     top: 0px;
     transition: height 0.4s, width 0.4s, top 0.4s, left 0.4s;
@@ -33,20 +33,10 @@ ${({
     ${MainHover &&
     `
       z-index:2;
-      left: -1.7vw;
+      left: -1.5vw;
       top: -2.5vw;
       height: 24vw;
-      width: 17.143vw;
-      ${
-        Index % 6 === 0
-          ? `
-            left: -3.2vw;
-          `
-          : Index === 6 * CurrentPage - 5 &&
-            `
-            left: 0px;
-          `
-      }
+      width: 16vw;
     `}
   `;
 }}
@@ -63,7 +53,7 @@ export const MaskContainer = Styled.div`
     border-radius: 5px;
     position: absolute;
     height: 19.5vw;
-    width: 13.929vw;
+    width: 13vw;
     ${MainHover &&
     `
       position: static;
