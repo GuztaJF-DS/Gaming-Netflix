@@ -38,38 +38,46 @@ export const CardContainer = Styled.div`
     align-items: center;
     transition: transform 1s;
     transform: translateX(calc((-15.38vw * 6) * ${currentPage}));
+    :hover {
+      cursor: pointer;
+    }
   `}
 `;
 
 export const MoveButton = Styled.button`
   position: absolute;
-  top: 58%;
+  top: 59%;
   transform: translateY(-50%);
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: hsla(0, 0%, 3%, 0.418);
+  background-color: hsla(0, 0%, 0%, 0.4);
   border: none;
   width: 2.5vw;
-  height: 15vw;
+  height: 19.7vw;
+  transition: background-color 0.2s;
   :first-child{
-    border-top-right-radius:4px;
-    border-bottom-right-radius:4px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
   }
   :last-child{
     right:0px;
-    border-top-left-radius:4px;
-    border-bottom-left-radius:4px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
     svg{
       transform: scaleX(-1);
     }
   }
   svg {
     width: 1.2vw;
-    fill:white;
+    transition: fill 0.2s;
+    fill:#ffffff00
   }
   :hover {
-    background: hsla(0, 0%, 0%, 0.5);
+    background-color: hsla(0, 0%, 3%, 0.5);
+    svg {
+      fill:#ffffff;
+    }
   }
 `;

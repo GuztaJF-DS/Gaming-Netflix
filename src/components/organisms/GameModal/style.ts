@@ -36,6 +36,9 @@ export const CloseButton = Styled.button`
   border:none;
   border-radius:10vw;
   background:#131212;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const BannerDiv = Styled.div`

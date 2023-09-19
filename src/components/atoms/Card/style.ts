@@ -7,17 +7,7 @@ export const HitboxContainer = Styled.div`
 `;
 
 export const MainContainer = Styled.div`
-${({
-  DelayHover,
-  MainHover,
-  Index,
-  CurrentPage,
-}: {
-  DelayHover: boolean;
-  MainHover: boolean;
-  Index: number;
-  CurrentPage: number;
-}) => {
+${({ DelayHover, MainHover }: { DelayHover: boolean; MainHover: boolean }) => {
   return css`
     border-radius: 5px;
     height: 19.5vw;

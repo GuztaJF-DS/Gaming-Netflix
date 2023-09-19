@@ -14,19 +14,27 @@ export const CustomButton = Styled.button`
     height: 2.8vw;
     width: 2.8vw;
     background-clip: padding-box;
-    border: 0.2vw solid rgba(255, 255, 255, 0.5);
+    border: 0.2vw solid #ffffff7c;
     :hover {
-      border: 0.2vw solid hsla(0, 0%, 100%, 1);
+      border: 0.2vw solid #ffffff;
+      cursor: pointer;
+
+      svg {
+        fill: #ffffff;
+      }
     }
     :active {
       filter: opacity(65%);
     }
     :focus {
-      outline: 0.2vw solid #ffffff;
+      outline: 0.2vw solid #ffffff7c;
     }
     @media (max-width: 425px) {
       height: 3vw;
       width: 0vw;
+    }
+    svg {
+      fill: #ececec;
     }
   `}
 `;

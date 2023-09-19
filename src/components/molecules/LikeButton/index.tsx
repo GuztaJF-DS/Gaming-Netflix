@@ -21,11 +21,7 @@ export function LikeButton({ onClick }: IDefaultButton) {
         setAdded(!added);
       }}
     >
-      {added ? (
-        <Thumb2 fill={'rgba(255, 255, 255, 0.7)'} />
-      ) : (
-        <Thumb1 fill={'rgba(255, 255, 255, 0.7)'} />
-      )}
+      {added ? <Thumb2 /> : <Thumb1 />}
     </RoundButton>
   );
 }

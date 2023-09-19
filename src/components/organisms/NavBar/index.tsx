@@ -18,7 +18,7 @@ export function NavBar() {
   useEffect(() => {
     if (window) {
       window.onscroll = function () {
-        if (document.documentElement.scrollTop > 50 !== blackHeader) {
+        if (document.documentElement.scrollTop > 5 !== blackHeader) {
           setBlackHeader(!blackHeader);
         }
       };

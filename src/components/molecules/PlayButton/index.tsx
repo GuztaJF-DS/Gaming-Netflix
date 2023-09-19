@@ -13,7 +13,7 @@ import { IDefaultButton } from '@/interfaces/IDefaultButton';
 export function PlayButton({ onClick }: IDefaultButton) {
   return (
     <RoundButton onClick={onClick}>
-      <Play fill={'rgba(255, 255, 255, 0.7)'} />
+      <Play />
     </RoundButton>
   );
 }
