@@ -30,13 +30,13 @@ export const MaskBackground = Styled.div`
 `;
 
 export const CloseButton = Styled.button`
-  position: absolute;
+  position: fixed;
   z-index:100;
   display:flex;
   align-items:center;
   justify-content:center;
-  right:1vw;
-  top:1vw;
+  left:75.5vw;
+  top:7vh;
   width: 3vw;
   height: 3vw;
   font-weight:100;
