@@ -1,15 +1,18 @@
 /* eslint-disable react/jsx-key */
 /* ----------------- External ----------------- */
+import React, { useState } from 'react';
 import { FakeData } from '@/api/FakeGameData';
 import { Card } from '@/components/atoms/Card';
-import React, { useState } from 'react';
-
 import Arrow from '../../../../public/svg/arrow-icon.svg';
 
 /* ----------------- Style ----------------- */
 import { Container, CardContainer, MoveButton } from './style';
 
-export function Carrousel() {
+export function Carrousel({
+  setGameSelected,
+}: {
+  setGameSelected: React.Dispatch<React.SetStateAction<string | null>>;
+}) {
   const [currentPage, setCurrentPage] = useState<number>(0);
 
   function UpdatePage(sum: boolean) {
@@ -24,29 +27,31 @@ export function Carrousel() {
     }
   }
   return (
-    <Container>
-      {currentPage !== 0 && (
+    <>
+      <Container>
+        {currentPage !== 0 && (
+          <MoveButton
+            onClick={() => {
+              UpdatePage(false);
+            }}
+          >
+            <Arrow />
+          </MoveButton>
+        )}
+        <p>GameCube Era</p>
+        <CardContainer currentPage={currentPage}>
+          {FakeData.map(data => (
+            <Card Data={data} setGameSelected={setGameSelected} />
+          ))}
+        </CardContainer>
         <MoveButton
           onClick={() => {
-            UpdatePage(false);
+            UpdatePage(true);
           }}
         >
           <Arrow />
         </MoveButton>
-      )}
-      <p>GameCube Era</p>
-      <CardContainer currentPage={currentPage}>
-        {FakeData.map((data, index) => (
-          <Card Data={data} index={index + 1} />
-        ))}
-      </CardContainer>
-      <MoveButton
-        onClick={() => {
-          UpdatePage(true);
-        }}
-      >
-        <Arrow />
-      </MoveButton>
-    </Container>
+      </Container>
+    </>
   );
 }

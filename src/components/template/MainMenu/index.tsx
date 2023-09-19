@@ -1,6 +1,5 @@
 /* ----------------- External ----------------- */
-import React from 'react';
-import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 
 /* ----------------- Style ----------------- */
 import { Container } from './style';
@@ -12,13 +11,18 @@ import { MainCard } from '@/components/organisms/MainCard';
 import { Carrousel } from '@/components/organisms/Carrousel';
 
 export function MainMenu() {
-  const router = useRouter();
+  const [gameSelected, setGameSelected] = useState<string | null>(null);
   return (
     <Container>
-      {router.query.id && <GameModal />}
+      {gameSelected && (
+        <GameModal
+          gameSelected={gameSelected}
+          setGameSelected={setGameSelected}
+        />
+      )}
       <NavBar />
       <MainCard />
-      <Carrousel />
+      <Carrousel setGameSelected={setGameSelected} />
     </Container>
   );
 }

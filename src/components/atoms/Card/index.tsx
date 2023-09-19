@@ -1,7 +1,6 @@
 /* ----------------- External ----------------- */
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import sleep from '@/utils/sleep';
 
 /* ----------------- Style ----------------- */
@@ -17,8 +16,13 @@ import { IFakeData } from '@/api/FakeGameData';
 import { PlayButton } from '@/components/molecules/PlayButton';
 import { AddButton } from '@/components/molecules/AddButton';
 
-export function Card({ Data }: { Data: IFakeData; index: number }) {
-  const router = useRouter();
+export function Card({
+  Data,
+  setGameSelected,
+}: {
+  Data: IFakeData;
+  setGameSelected: React.Dispatch<React.SetStateAction<string | null>>;
+}) {
   const [mainHover, setMainHover] = useState(false);
   const [delayHover, setDelayHover] = useState(false);
   const [mouseTimer, setMouseTimer] = useState<number>();
@@ -62,18 +66,14 @@ export function Card({ Data }: { Data: IFakeData; index: number }) {
               alt="Game"
               draggable={false}
               onClick={() => {
-                router.replace({
-                  query: { ...router.query, id: Data.id },
-                });
+                setGameSelected(Data.id);
               }}
             />
             <BottomContainer MainHover={mainHover}>
               <NameContainer>{Data.name}</NameContainer>
               <PlayButton
                 onClick={() => {
-                  router.replace({
-                    query: { ...router.query, id: Data.id },
-                  });
+                  setGameSelected(Data.id);
                 }}
               />
               <AddButton

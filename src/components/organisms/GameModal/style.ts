@@ -3,19 +3,26 @@ import Styled, { keyframes } from 'styled-components';
 
 export const Container = Styled.div`
   position: fixed;
-  z-index:101;
+  z-index: 101;
   width: 60vw;
-  min-height: 40vw;
-  top:2vw;
-  left:20vw;
-  border-radius:1vw;
-  background:#202020;
+  max-height: 95vh;
+  overflow: auto;
+  top: 5vh;
+  left: 20vw;
+  border-radius: 1vw;
+  background: #202020;
+  transition: top 5s max-height 5s;
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
 `;
 
 export const MaskBackground = Styled.div`
   position: absolute;
   z-index:100;
-  backdrop-filter:brightness(60%) blur(1.5px);
+  backdrop-filter: blur(1.5px);
   width: 100vw;
   height: 100vw;
   border-radius:1vw;
@@ -41,7 +48,7 @@ export const CloseButton = Styled.button`
   }
 `;
 
-export const BannerDiv = Styled.div`
+export const BannerContainer = Styled.div`
   width: 100%;
   height: 30vw;
   position: relative;
@@ -56,7 +63,7 @@ export const ImageWrapper = Styled.div`
   height: 30.1vw;
 `;
 
-export const LogoDiv = Styled.div`
+export const LogoContainer = Styled.div`
   display: flex;
   flex-direction:column;
   position: absolute;
@@ -101,4 +108,8 @@ export const ImageContainer = Styled.div`
     animation-iteration-count: infinite;
     animation-direction: alternate;
   }
+`;
+
+export const ContentContainer = Styled.div`
+  padding:1.5vw;
 `;
