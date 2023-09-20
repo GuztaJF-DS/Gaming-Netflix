@@ -120,12 +120,12 @@ export const ContentContainer = Styled.div`
 export const DetailsRow = Styled.div`
   width:40%;
   > div {
-    font-size: 14px;
-    margin-bottom:10px;
+    font-size: 1vw;
+    margin-bottom:1vw;
     flex-wrap: wrap;
     > span {
       width: fit-content;
-      font-size: 14px;
+      font-size: 1vw;
       color:#777777;
     }
   }
@@ -134,18 +134,21 @@ export const DetailsRow = Styled.div`
 export const DescriptionRow = Styled.div`
   width:55%;
   > div {
-    font-size: 14px !important;
+    font-size: 1vw !important;
   }
   > p { 
-    margin-bottom: 1.7vw;
+    margin-bottom: 1vw;
     > div {
       display: flex;
       align-items: center;
     }
     justify-content:space-between;
+    width:96%;
     display: flex;
     align-items: center;
-    color:#BCBCBC;
+    >span {
+      color:#BCBCBC;
+    }
   }
 `;
 

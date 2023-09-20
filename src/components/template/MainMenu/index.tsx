@@ -1,5 +1,5 @@
 /* ----------------- External ----------------- */
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 /* ----------------- Style ----------------- */
 import { Container } from './style';
@@ -12,15 +12,33 @@ import { Carrousel } from '@/components/organisms/Carrousel';
 
 export function MainMenu() {
   const [gameSelected, setGameSelected] = useState<string | null>(null);
+  const [blackHeader, setBlackHeader] = useState(false);
+
+  const containerRef = useCallback(
+    (element: HTMLDivElement) => {
+      if (element) {
+        element.addEventListener(
+          'scroll',
+          () => {
+            if (element?.scrollTop > 0 !== blackHeader) {
+              setBlackHeader(!blackHeader);
+            }
+          },
+          { passive: true },
+        );
+      }
+    },
+    [blackHeader],
+  );
   return (
-    <Container>
+    <Container ref={containerRef}>
       {gameSelected && (
         <GameModal
           gameSelected={gameSelected}
           setGameSelected={setGameSelected}
         />
       )}
-      <NavBar />
+      <NavBar blackHeader={blackHeader} />
       <MainCard />
       <Carrousel setGameSelected={setGameSelected} />
     </Container>

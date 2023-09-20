@@ -97,11 +97,13 @@ export function GameModal({
                   {currentGame?.averageScore}
                 </ScoreBox>
                 <ScoreText score={currentGame?.averageScore || 0}>
-                  &nbsp;Score&nbsp;
+                  &nbsp;Score
                 </ScoreText>
               </div>
-              {currentGame?.releaseYear}&nbsp;
-              {currentGame?.averageTimeToBeat} hours in average to beat
+              <span>{currentGame?.releaseYear}</span>
+              <span>
+                {currentGame?.averageTimeToBeat} hours in average to beat
+              </span>
             </p>
             <div>{currentGame?.description}</div>
           </DescriptionRow>
