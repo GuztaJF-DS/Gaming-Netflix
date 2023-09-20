@@ -86,7 +86,6 @@ export const BottomContainer = Styled.div`
 export const NameContainer = Styled.div`
   display: flex;
   width:10vw;
-  height: 100%;
   overflow: hidden; 
   font-size:85%;
   padding-left:4px;
