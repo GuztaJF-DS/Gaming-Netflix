@@ -1,5 +1,5 @@
 /* ----------------- External ----------------- */
-import Styled, { keyframes } from 'styled-components';
+import Styled, { css, keyframes } from 'styled-components';
 
 export const Container = Styled.div`
   position: fixed;
@@ -114,14 +114,7 @@ export const ContentContainer = Styled.div`
   display: flex;
   flex-direction:row;
   justify-content:space-between;
-  padding:1.5vw;
-  > div {
-    font-size: 14px !important;
-  }
-`;
-
-export const DescriptionRow = Styled.div`
-  width:55%;
+  padding:2vw;
 `;
 
 export const DetailsRow = Styled.div`
@@ -136,4 +129,58 @@ export const DetailsRow = Styled.div`
       color:#777777;
     }
   }
+`;
+
+export const DescriptionRow = Styled.div`
+  width:55%;
+  > div {
+    font-size: 14px !important;
+  }
+  > p { 
+    margin-bottom: 1.7vw;
+    > div {
+      display: flex;
+      align-items: center;
+    }
+    justify-content:space-between;
+    display: flex;
+    align-items: center;
+    color:#BCBCBC;
+  }
+`;
+
+export const ScoreBox = Styled.div`
+  ${({ score }: { score: number }) => css`
+    background: ${(() => {
+      if (score >= 75 && score <= 100) {
+        return '#66CC33';
+      } else if (score <= 74 && score >= 50) {
+        return '#FFCC33';
+      } else {
+        return '#FF0000';
+      }
+    })()};
+    color: ${score >= 50 && score <= 100 ? '#262626' : '#ffffff'};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3vw;
+    font-weight: 600;
+    width: 2.2vw;
+    height: 2.1vw;
+  `}
+`;
+
+export const ScoreText = Styled.div`
+  ${({ score }: { score: number }) => css`
+    color: ${(() => {
+      if (score >= 75 && score <= 100) {
+        return '#66CC33';
+      } else if (score <= 74 && score >= 50) {
+        return '#FFCC33';
+      } else {
+        return '#FF0000';
+      }
+    })()};
+  `}
 `;

@@ -18,6 +18,8 @@ import {
   ContentContainer,
   DescriptionRow,
   DetailsRow,
+  ScoreBox,
+  ScoreText,
 } from './style';
 
 export function GameModal({
@@ -88,7 +90,21 @@ export function GameModal({
           </ImageContainer>
         </BannerContainer>
         <ContentContainer>
-          <DescriptionRow>{currentGame?.description}</DescriptionRow>
+          <DescriptionRow>
+            <p>
+              <div>
+                <ScoreBox score={currentGame?.averageScore || 0}>
+                  {currentGame?.averageScore}
+                </ScoreBox>
+                <ScoreText score={currentGame?.averageScore || 0}>
+                  &nbsp;Score&nbsp;
+                </ScoreText>
+              </div>
+              {currentGame?.releaseYear}&nbsp;
+              {currentGame?.averageTimeToBeat} hours in average to beat
+            </p>
+            <div>{currentGame?.description}</div>
+          </DescriptionRow>
           <DetailsRow>
             <div>
               <span>Made by:&nbsp;</span>
