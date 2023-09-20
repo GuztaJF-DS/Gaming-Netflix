@@ -111,5 +111,29 @@ export const ImageContainer = Styled.div`
 `;
 
 export const ContentContainer = Styled.div`
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
   padding:1.5vw;
+  > div {
+    font-size: 14px !important;
+  }
+`;
+
+export const DescriptionRow = Styled.div`
+  width:55%;
+`;
+
+export const DetailsRow = Styled.div`
+  width:40%;
+  > div {
+    font-size: 14px;
+    margin-bottom:10px;
+    flex-wrap: wrap;
+    > span {
+      width: fit-content;
+      font-size: 14px;
+      color:#777777;
+    }
+  }
 `;
