@@ -14,6 +14,7 @@ export const MainContainer = Styled.div`
       initial-value: transparent;
       inherits: false;
     }
+    padding: 0.5vw;
     display: flex;
     z-index: 99;
     position: fixed;

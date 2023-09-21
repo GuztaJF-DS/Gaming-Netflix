@@ -7,8 +7,11 @@ export const Container = Styled.div`
   overflow-y: visible;
   top:-5.63vw;
   z-index: 10;
-  height: 20vw;
-  margin-bottom:8vw;
+  min-height: 23vw;
+  margin-bottom:3vw;
+  @media (max-width: 768px) {
+    min-height:34vw;
+  }
   :last-child {
     margin-bottom:0vw;
   }
@@ -38,6 +41,11 @@ export const CardContainer = Styled.div`
     align-items: center;
     transition: transform 1s;
     transform: translateX(calc((-15.38vw * 6) * ${currentPage}));
+    @media (max-width: 768px) {
+      margin-left: 5.45vw;
+      grid-gap: 2vw;
+      transform: translateX(calc((-22.63vw * 4) * ${currentPage}));
+    }
     :hover {
       cursor: pointer;
     }
@@ -46,17 +54,22 @@ export const CardContainer = Styled.div`
 
 export const MoveButton = Styled.button`
   position: absolute;
-  top: 59%;
   transform: translateY(-50%);
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: hsla(0, 0%, 0%, 0.4);
+  background-color: #00000057;
   border: none;
   width: 2.5vw;
   height: 19.7vw;
   transition: background-color 0.2s;
+  top: 52.4%;
+  @media (max-width: 768px) {
+    height: 29.2vw;
+    width: 3.7vw;
+    top: 50%;
+  }
   :first-child{
     border-top-right-radius:5px;
     border-bottom-right-radius:5px;

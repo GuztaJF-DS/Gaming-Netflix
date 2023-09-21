@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 /* ----------------- External ----------------- */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FakeData } from '@/api/FakeGameData';
 import { Card } from '@/components/atoms/Card';
 import Arrow from '../../../../public/svg/arrow-icon.svg';
@@ -8,16 +8,39 @@ import Arrow from '../../../../public/svg/arrow-icon.svg';
 /* ----------------- Style ----------------- */
 import { Container, CardContainer, MoveButton } from './style';
 
+function getCurrentDimension() {
+  if (typeof window !== 'undefined') {
+    if (window.innerWidth <= 768 && window.innerWidth >= 0) {
+      return 4;
+    } else {
+      return 6;
+    }
+  }
+  return 6;
+}
+
 export function Carrousel({
   setGameSelected,
 }: {
   setGameSelected: React.Dispatch<React.SetStateAction<string | null>>;
 }) {
   const [currentPage, setCurrentPage] = useState<number>(0);
+  const [pagesAmount, setPagesAmount] = useState(getCurrentDimension());
+
+  useEffect(() => {
+    const updateDimension = () => {
+      setPagesAmount(getCurrentDimension());
+    };
+    window.addEventListener('resize', updateDimension);
+
+    return () => {
+      window.removeEventListener('resize', updateDimension);
+    };
+  }, [pagesAmount]);
 
   function UpdatePage(sum: boolean) {
     if (sum) {
-      if (currentPage + 1 < Math.ceil(FakeData.length / 6)) {
+      if (currentPage + 1 < Math.ceil(FakeData.length / pagesAmount)) {
         setCurrentPage(currentPage + 1);
       } else {
         setCurrentPage(0);
@@ -26,32 +49,29 @@ export function Carrousel({
       setCurrentPage(currentPage - 1);
     }
   }
+
   return (
-    <>
-      <Container>
-        {currentPage !== 0 && (
-          <MoveButton
-            onClick={() => {
-              UpdatePage(false);
-            }}
-          >
-            <Arrow />
-          </MoveButton>
-        )}
-        <p>GameCube Era</p>
-        <CardContainer currentPage={currentPage}>
-          {FakeData.map(data => (
-            <Card Data={data} setGameSelected={setGameSelected} />
-          ))}
-        </CardContainer>
-        <MoveButton
-          onClick={() => {
-            UpdatePage(true);
-          }}
-        >
-          <Arrow />
-        </MoveButton>
-      </Container>
-    </>
+    <Container>
+      <MoveButton
+        onClick={() => {
+          UpdatePage(false);
+        }}
+      >
+        <Arrow />
+      </MoveButton>
+      <p>GameCube Era</p>
+      <CardContainer currentPage={currentPage}>
+        {FakeData.map(data => (
+          <Card Data={data} setGameSelected={setGameSelected} />
+        ))}
+      </CardContainer>
+      <MoveButton
+        onClick={() => {
+          UpdatePage(true);
+        }}
+      >
+        <Arrow />
+      </MoveButton>
+    </Container>
   );
 }
