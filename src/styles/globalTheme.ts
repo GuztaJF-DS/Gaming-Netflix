@@ -25,9 +25,9 @@ export const Global = createGlobalStyle`
       background: #cccccc;
     }
     ::-webkit-scrollbar-thumb {
-    background-color: #333333;
-    border-radius: 10px;
-  }
+      background-color: #333333;
+      border-radius: 10px;
+    }
   }
   html{
     scroll-behavior:smooth;
@@ -36,8 +36,9 @@ export const Global = createGlobalStyle`
   html, body {
     cursor: default;
     z-index: 0;
-    background: #141414;
-    min-height: 100vh;
+  }
+  body {
+    overflow-y:hidden;
   }
   main {
     padding: 0%;

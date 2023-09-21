@@ -1,5 +1,5 @@
 /* ----------------- External ----------------- */
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 /* ----------------- Style ----------------- */
@@ -13,17 +13,7 @@ import {
   ProfilePic,
 } from './style';
 
-export function NavBar() {
-  const [blackHeader, setBlackHeader] = useState(false);
-  useEffect(() => {
-    if (window) {
-      window.onscroll = function () {
-        if (document.documentElement.scrollTop > 50 !== blackHeader) {
-          setBlackHeader(!blackHeader);
-        }
-      };
-    }
-  }, [blackHeader]);
+export function NavBar({ blackHeader }: { blackHeader: boolean }) {
   return (
     <MainContainer blackHeader={blackHeader}>
       <ImageContainer>

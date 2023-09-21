@@ -16,7 +16,13 @@ import { IFakeData } from '@/api/FakeGameData';
 import { PlayButton } from '@/components/molecules/PlayButton';
 import { AddButton } from '@/components/molecules/AddButton';
 
-export function Card({ Data, index }: { Data: IFakeData; index: number }) {
+export function Card({
+  Data,
+  setGameSelected,
+}: {
+  Data: IFakeData;
+  setGameSelected: React.Dispatch<React.SetStateAction<string | null>>;
+}) {
   const [mainHover, setMainHover] = useState(false);
   const [delayHover, setDelayHover] = useState(false);
   const [mouseTimer, setMouseTimer] = useState<number>();
@@ -47,13 +53,8 @@ export function Card({ Data, index }: { Data: IFakeData; index: number }) {
           setMouseTimer(1);
         }}
       >
-        <MaskContainer MainHover={delayHover}>{Data.name}</MaskContainer>
-        <MainContainer
-          Index={index}
-          DelayHover={delayHover}
-          MainHover={mainHover}
-          CurrentPage={Math.ceil(index / 6)}
-        >
+        <MaskContainer MainHover={delayHover} />
+        <MainContainer DelayHover={delayHover} MainHover={mainHover}>
           <ImageContainer>
             <Image
               src={`/games/cover/${Data.thumbUrl}.png`}
@@ -64,12 +65,15 @@ export function Card({ Data, index }: { Data: IFakeData; index: number }) {
               }}
               alt="Game"
               draggable={false}
+              onClick={() => {
+                setGameSelected(Data.id);
+              }}
             />
             <BottomContainer MainHover={mainHover}>
               <NameContainer>{Data.name}</NameContainer>
               <PlayButton
                 onClick={() => {
-                  console.log('play');
+                  setGameSelected(Data.id);
                 }}
               />
               <AddButton

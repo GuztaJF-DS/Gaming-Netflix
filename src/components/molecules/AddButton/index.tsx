@@ -21,11 +21,7 @@ export function AddButton({ onClick }: IDefaultButton) {
         setAdded(!added);
       }}
     >
-      {added ? (
-        <Checked fill={'rgba(255, 255, 255, 0.7)'} />
-      ) : (
-        <Add fill={'rgba(255, 255, 255, 0.7)'} />
-      )}
+      {added ? <Checked /> : <Add />}
     </RoundButton>
   );
 }

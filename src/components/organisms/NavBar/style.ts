@@ -66,14 +66,19 @@ export const ButtonContainer = Styled.div`
 `;
 
 export const ButtonNav = Styled.p`
-  font-size: 85%;
+  font-size: 75%;
+  color:#e5e5e5;
+  cursor: pointer;
+  transition:color 0.3s;
   @media screen and (max-width: 768px) {
     font-size:1.1vw;
     min-width:6vw
   }
-  cursor: pointer;
+  :first-child {
+    color:#ffffff;
+  }
   :hover {
-    text-decoration: underline;
+    color:#b3b3b3;
   }
 `;
 

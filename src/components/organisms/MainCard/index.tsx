@@ -1,6 +1,6 @@
 /* ----------------- External ----------------- */
-import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 /* ----------------- Molecules ----------------- */
 import { LargePlayButton } from '@/components/molecules/LargePlayButton';
@@ -21,14 +21,13 @@ export function MainCard() {
   const [randomNumber, SetRandomNumber] = useState<number>();
   useEffect(() => {
     SetRandomNumber(Math.floor(Math.random() * BannerData.length));
-    // SetRandomNumber(1);
   }, []);
   if (randomNumber !== undefined) {
     return (
       <Container>
         <ImageWrapper />
         <Image
-          src={`/games/banner/${BannerData[randomNumber]?.name}.png`}
+          src={`/games/mainBanner/${BannerData[randomNumber]?.name}.png`}
           fill
           style={{
             objectFit: 'contain',
