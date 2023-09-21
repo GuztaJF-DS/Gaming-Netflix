@@ -3,8 +3,8 @@ import Styled from 'styled-components';
 
 export const Container = Styled.div`
   display: flex;
-  height: 50vw;
   background: #131313;
+  min-height: 50vw;
   position: relative;
   justify-content:center;
   align-items:center;
@@ -23,6 +23,7 @@ export const ImageWrapper = Styled.div`
   width: 100%;
   height: 100%;
 `;
+
 export const ContentContainer = Styled.div`
   z-index: 1;
   display: flex;
@@ -33,10 +34,6 @@ export const ContentContainer = Styled.div`
   height: auto;
   top: 30%;
   left: 4%;
-  @media (max-width:768px){
-    width:40vw;
-    top: 40%;
-  }
 `;
 
 export const DescriptionContainer = Styled.h4`
@@ -49,7 +46,8 @@ export const DescriptionContainer = Styled.h4`
   margin-bottom: 13px;
   @media (max-width:768px){
     margin-bottom: 4px;
-    font-size:1.8vw;
+    font-size:1.6vw;
+    text-shadow: 0.3vw 0.3vw 0.3vw rgba(0, 0, 0, 0.5);
   }
 `;
 
