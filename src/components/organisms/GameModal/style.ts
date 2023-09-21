@@ -4,11 +4,11 @@ import Styled, { css, keyframes } from 'styled-components';
 export const Container = Styled.div`
   position: fixed;
   z-index: 101;
-  width: 60vw;
+  width: 65vw;
   max-height: 95vh;
   overflow: auto;
-  top: 5vh;
-  left: 20vw;
+  top: 4vh;
+  left: 17.5vw;
   border-radius: 1vw;
   background: #202020;
   transition: top 5s max-height 5s;
@@ -35,7 +35,7 @@ export const CloseButton = Styled.button`
   display:flex;
   align-items:center;
   justify-content:center;
-  left:75.5vw;
+  left:78.5vw;
   top:7vh;
   width: 3vw;
   height: 3vw;
@@ -50,7 +50,7 @@ export const CloseButton = Styled.button`
 
 export const BannerContainer = Styled.div`
   width: 100%;
-  height: 30vw;
+  height: 32vw;
   position: relative;
 `;
 
@@ -60,15 +60,15 @@ export const ImageWrapper = Styled.div`
   backdrop-filter:brightness(110%);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #202020b7 85%, #202020 100%);
   width: 100%;
-  height: 30.1vw;
+  height: 32.1vw;
 `;
 
 export const LogoContainer = Styled.div`
   display: flex;
   flex-direction:column;
   position: absolute;
-  bottom:1vw;
-  left:1vw;
+  bottom:3vw;
+  left:3.5vw;
   z-index:10;
   width: 19vw;
   img {
@@ -91,18 +91,18 @@ const MovingAnimation = keyframes`
  5% { transform: translateX(0vw); }
  50% { transform: translateX(-17vw); }
  55% { transform: translateX(-17vw); }
- 95% { transform: translateX(-33vw); }
- 100% { transform: translateX(-33vw); }
+ 95% { transform: translateX(-34vw); }
+ 100% { transform: translateX(-34vw); }
 `;
 
 export const ImageContainer = Styled.div`
   position: relative;
   overflow-x: clip;
   overflow-y: visible;
-  height: 30vw;
+  height: 32vw;
   img{
     position: absolute !important;
-    width:92.9vw !important;
+    width:99vw !important;
     animation-name: ${MovingAnimation};
     animation-duration: 20s;
     animation-iteration-count: infinite;
@@ -118,7 +118,7 @@ export const ContentContainer = Styled.div`
 `;
 
 export const DetailsRow = Styled.div`
-  width:40%;
+  width:37%;
   > div {
     font-size: 1vw;
     margin-bottom:1vw;
