@@ -47,12 +47,16 @@ export const ImageContainer = Styled.div`
   display: flex;
   width:15vw;
   height: 100%;
+  @media (max-width: 768px) {
+    margin-top:0.5vw;
+    width: 29vw;
+  }
   img {
     margin-left: 1.5vw;
     position: relative !important;
     max-width: 10vw;
     @media (max-width: 768px) {
-      width: 14vw;
+      max-width: 20vw;
     }
   }
 `;
@@ -61,7 +65,10 @@ export const ButtonContainer = Styled.div`
   display: flex;
   width: 80vw;
   > p {
-    margin-right: 20px;
+    margin-right: 2vw;
+  }
+  @media (max-width: 768px) {
+    width: 70vw;
   }
 `;
 
@@ -76,6 +83,9 @@ export const ButtonNav = Styled.p`
   :hover {
     color:#b3b3b3;
   }
+  @media (max-width: 768px) {
+    font-size: 1.7vw;
+  }
 `;
 
 export const IconContainer = Styled.div`
@@ -86,6 +96,9 @@ export const IconContainer = Styled.div`
   > button{
     margin-left:0.3vw;
   }
+  @media (max-width: 768px) {
+    width: 20vw;
+  }
 `;
 
 export const IconNav = Styled.button`
@@ -95,10 +108,6 @@ export const IconNav = Styled.button`
   height:2.4vw;
   width: 2.4vw;
   @media (max-width: 768px) {
-    height:3vw;
-    width: 3vw;
-  }
-  @media (max-width: 425px) {
     height:4vw;
     width: 4vw;
   }
@@ -118,11 +127,14 @@ export const ProfilePic = Styled.button`
   background: transparent;
   border: none;
   width: 3.5vw;
-  @media (max-width: 768px) {
-    width: 4vw;
+  p{
+    font-size:1.4vw;
+    @media (max-width: 768px) {
+        font-size:2.2vw;
+    }
   }
-  @media (max-width: 425px) {
-    width: 6vw;
+  @media (max-width: 768px) {
+    width: 5.5vw;
   }
   img {
     border-radius: 3px;

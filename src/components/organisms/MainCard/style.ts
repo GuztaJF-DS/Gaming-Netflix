@@ -34,6 +34,9 @@ export const ContentContainer = Styled.div`
   height: auto;
   top: 30%;
   left: 4%;
+  @media (max-width:768px){
+    top: 35%;
+  }
 `;
 
 export const DescriptionContainer = Styled.h4`
