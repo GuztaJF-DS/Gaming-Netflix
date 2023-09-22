@@ -61,14 +61,15 @@ export function Carrousel({
     <>
       <Container>
         <p>GameCube Era</p>
-        <MoveButton
-          onClick={() => {
-            UpdatePage(false);
-            setCancelHover(true);
-          }}
-        >
-          <Arrow />
-        </MoveButton>
+        {currentPage !== 0 && (
+          <MoveButton
+            onClick={() => {
+              UpdatePage(false);
+            }}
+          >
+            <Arrow />
+          </MoveButton>
+        )}
         <CardContainer currentPage={currentPage}>
           {FakeData.map(data => (
             <Card
