@@ -7,5 +7,5 @@ export const Container = Styled.div`
   height:fit-content;
   background: #141414;
   height: 100vh;
-  overflow-y:auto !important;
+  overflow-y:scroll !important;
 `;

@@ -32,6 +32,9 @@ export const CustomButton = Styled.button`
     :focus {
       outline: 0.2vw solid #ffffff;
     }
+    @media (max-width: 768px) {
+      font-size: 1.8vw;
+    }
   `}
 `;
 

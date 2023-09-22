@@ -28,6 +28,15 @@ ${({ DelayHover, MainHover }: { DelayHover: boolean; MainHover: boolean }) => {
       height: 24vw;
       width: 16vw;
     `}
+    @media (max-width: 768px) {
+      height: 28.882vw;
+      width: 20.63vw;
+      ${MainHover &&
+      `
+          height: 33.0820vw;
+          width: 23.63vw;
+      `}
+    }
   `;
 }}
 `;
@@ -48,6 +57,10 @@ export const MaskContainer = Styled.div`
     `
       position: static;
     `}
+    @media (max-width: 768px) {
+      height: 28.882vw;
+      width: 20.63vw;
+    }
   `}
 `;
 

@@ -30,7 +30,7 @@ export function MainCard() {
           src={`/games/mainBanner/${BannerData[randomNumber]?.name}.png`}
           fill
           style={{
-            objectFit: 'contain',
+            objectFit: 'cover',
             zIndex: 0,
           }}
           draggable={false}
