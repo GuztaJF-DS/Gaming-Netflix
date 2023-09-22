@@ -30,13 +30,19 @@ export function Carrousel({
   useEffect(() => {
     const updateDimension = () => {
       setPagesAmount(getCurrentDimension());
+      if (
+        currentPage + 1 > Math.ceil(FakeData.length / 6) &&
+        window.innerWidth >= 768
+      ) {
+        setCurrentPage(Math.ceil(FakeData.length / 6) - 1);
+      }
     };
     window.addEventListener('resize', updateDimension);
 
     return () => {
       window.removeEventListener('resize', updateDimension);
     };
-  }, [pagesAmount]);
+  }, [pagesAmount, currentPage]);
 
   function UpdatePage(sum: boolean) {
     if (sum) {
