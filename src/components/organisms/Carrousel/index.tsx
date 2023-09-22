@@ -32,10 +32,10 @@ export function Carrousel({
     const updateDimension = () => {
       setPagesAmount(getCurrentDimension());
       if (
-        currentPage + 1 > Math.ceil(FakeData.length / 6) &&
+        currentPage + 1 > Math.round(FakeData.length / 6) &&
         window.innerWidth >= 768
       ) {
-        setCurrentPage(Math.ceil(FakeData.length / 6) - 1);
+        setCurrentPage(Math.round(FakeData.length / 6) - 1);
       }
     };
     window.addEventListener('resize', updateDimension);
@@ -47,7 +47,7 @@ export function Carrousel({
 
   function UpdatePage(sum: boolean) {
     if (sum) {
-      if (currentPage + 1 < Math.ceil(FakeData.length / pagesAmount)) {
+      if (currentPage + 1 < Math.round(FakeData.length / pagesAmount)) {
         setCurrentPage(currentPage + 1);
       } else {
         setCurrentPage(0);
