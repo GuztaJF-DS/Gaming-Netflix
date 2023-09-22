@@ -3,6 +3,8 @@ import Styled, { css } from 'styled-components';
 
 export const Container = Styled.div`
   position: relative;
+  display: flex;
+  align-items:center;
   overflow-x: clip;
   overflow-y: visible;
   top:-5.63vw;
@@ -16,6 +18,9 @@ export const Container = Styled.div`
     margin-bottom:0vw;
   }
   > p {
+    position: absolute;
+    top:-0.8vw;
+    left: 3vw;
     z-index: -10 !important;
     margin-bottom:10px;
     margin-left:20px;
@@ -54,7 +59,6 @@ export const CardContainer = Styled.div`
 
 export const MoveButton = Styled.button`
   position: absolute;
-  transform: translateY(-50%);
   z-index: 1;
   display: flex;
   align-items: center;
@@ -62,13 +66,11 @@ export const MoveButton = Styled.button`
   background-color: #00000057;
   border: none;
   width: 2.5vw;
-  height: 19.7vw;
+  height: 19.5vw;
   transition: background-color 0.2s;
-  top: 52.4%;
   @media (max-width: 768px) {
-    height: 29.2vw;
-    width: 3.7vw;
-    top: 50%;
+    height: 28.882vw;
+    width: 3.48vw;
   }
   :first-child{
     border-top-right-radius:5px;

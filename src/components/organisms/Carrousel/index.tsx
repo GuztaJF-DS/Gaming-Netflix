@@ -26,6 +26,7 @@ export function Carrousel({
 }) {
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [pagesAmount, setPagesAmount] = useState(getCurrentDimension());
+  const [cancelHover, setCancelHover] = useState(false);
 
   useEffect(() => {
     const updateDimension = () => {
@@ -57,27 +58,36 @@ export function Carrousel({
   }
 
   return (
-    <Container>
-      <MoveButton
-        onClick={() => {
-          UpdatePage(false);
-        }}
-      >
-        <Arrow />
-      </MoveButton>
-      <p>GameCube Era</p>
-      <CardContainer currentPage={currentPage}>
-        {FakeData.map(data => (
-          <Card Data={data} setGameSelected={setGameSelected} />
-        ))}
-      </CardContainer>
-      <MoveButton
-        onClick={() => {
-          UpdatePage(true);
-        }}
-      >
-        <Arrow />
-      </MoveButton>
-    </Container>
+    <>
+      <Container>
+        <p>GameCube Era</p>
+        <MoveButton
+          onClick={() => {
+            UpdatePage(false);
+            setCancelHover(true);
+          }}
+        >
+          <Arrow />
+        </MoveButton>
+        <CardContainer currentPage={currentPage}>
+          {FakeData.map(data => (
+            <Card
+              cancelHover={cancelHover}
+              setCancelHover={setCancelHover}
+              data={data}
+              setGameSelected={setGameSelected}
+            />
+          ))}
+        </CardContainer>
+        <MoveButton
+          onClick={() => {
+            UpdatePage(true);
+            setCancelHover(true);
+          }}
+        >
+          <Arrow />
+        </MoveButton>
+      </Container>
+    </>
   );
 }

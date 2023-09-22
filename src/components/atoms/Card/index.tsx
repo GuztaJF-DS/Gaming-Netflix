@@ -17,15 +17,20 @@ import { PlayButton } from '@/components/molecules/PlayButton';
 import { AddButton } from '@/components/molecules/AddButton';
 
 export function Card({
-  Data,
+  data,
   setGameSelected,
+  setCancelHover,
+  cancelHover,
 }: {
-  Data: IFakeData;
+  data: IFakeData;
   setGameSelected: React.Dispatch<React.SetStateAction<string | null>>;
+  setCancelHover: React.Dispatch<React.SetStateAction<boolean>>;
+  cancelHover: boolean;
 }) {
   const [mainHover, setMainHover] = useState(false);
   const [delayHover, setDelayHover] = useState(false);
   const [mouseTimer, setMouseTimer] = useState<number>();
+
   useEffect(() => {
     if (mainHover) {
       setDelayHover(mainHover);
@@ -35,6 +40,16 @@ export function Card({
       });
     }
   }, [mainHover]);
+
+  useEffect(() => {
+    if (cancelHover) {
+      setMainHover(false);
+      clearTimeout(mouseTimer);
+      setMouseTimer(1);
+      setCancelHover(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cancelHover]);
 
   return (
     <>
@@ -57,7 +72,7 @@ export function Card({
         <MainContainer DelayHover={delayHover} MainHover={mainHover}>
           <ImageContainer>
             <Image
-              src={`/games/cover/${Data.thumbUrl}.png`}
+              src={`/games/cover/${data.thumbUrl}.png`}
               fill
               style={{
                 objectFit: 'cover',
@@ -66,14 +81,14 @@ export function Card({
               alt="Game"
               draggable={false}
               onClick={() => {
-                setGameSelected(Data.id);
+                setGameSelected(data.id);
               }}
             />
             <BottomContainer MainHover={mainHover}>
-              <NameContainer>{Data.name}</NameContainer>
+              <NameContainer>{data.name}</NameContainer>
               <PlayButton
                 onClick={() => {
-                  setGameSelected(Data.id);
+                  setGameSelected(data.id);
                 }}
               />
               <AddButton
